@@ -1,0 +1,223 @@
+# depslib dependency file v1.0
+1415481157 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/main.cpp
+	<GL/glew.h>
+	<GL/glut.h>
+	<iostream>
+	"window.h"
+	"coreengine.h"
+	"scene.h"
+	"renderingengine.h"
+
+1415629907 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/window.h
+	<iostream>
+	<glm/glm.hpp>
+	"input.h"
+
+1415627956 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/window.cpp
+	"window.h"
+	<GL/glew.h>
+	<GL/glut.h>
+	"input.h"
+
+1415769157 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/coreengine.cpp
+	"coreengine.h"
+
+1415515708 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/coreengine.h
+	"window.h"
+	"scene.h"
+	"renderingengine.h"
+
+1415773596 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/scene.h
+	"input.h"
+	"mesh.h"
+	"shader.h"
+	"camera.h"
+	"transform.h"
+	"timer.h"
+	"camera.h"
+	"texture.h"
+
+1415528619 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/timer.cpp
+	"timer.h"
+	<GL/glew.h>
+	<GL/glut.h>
+
+1415528570 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/timer.h
+
+1415781630 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/scene.cpp
+	"scene.h"
+
+1415630709 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/input.cpp
+	"input.h"
+
+1415628903 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/input.h
+	<iostream>
+	<glm/glm.hpp>
+
+1415469774 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/renderingengine.h
+	<GL/glew.h>
+	<GL/glut.h>
+	"window.h"
+
+1415777355 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/mesh.h
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<iostream>
+	<vector>
+
+1415781028 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/renderingengine.cpp
+	"renderingengine.h"
+
+1415780635 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/mesh.cpp
+	"mesh.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
+1415524431 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/shader.cpp
+	"shader.h"
+	<iostream>
+	<fstream>
+
+1415524401 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/shader.h
+	<string>
+	<GL/glew.h>
+	"transform.h"
+	"camera.h"
+	<iostream>
+	<vector>
+	<map>
+
+1415625805 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/transform.h
+	<glm/glm.hpp>
+	<glm/gtx/transform.hpp>
+
+1415770549 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/camera.h
+	<glm/glm.hpp>
+	<glm/gtx/transform.hpp>
+	"input.h"
+
+1415770472 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/camera.cpp
+	"camera.h"
+
+1414150615 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/texture.cpp
+	"texture.h"
+	<iostream>
+	<SOIL/SOIL.h>
+	<cassert>
+
+1414150368 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-wa/texture.h
+	<string>
+	<GL/glew.h>
+
+1415770472 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/camera.cpp
+	"camera.h"
+
+1415770549 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/camera.h
+	<glm/glm.hpp>
+	<glm/gtx/transform.hpp>
+	"input.h"
+
+1415628903 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/input.h
+	<iostream>
+	<glm/glm.hpp>
+
+1415769157 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/coreengine.cpp
+	"coreengine.h"
+
+1415515708 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/coreengine.h
+	"window.h"
+	"scene.h"
+	"renderingengine.h"
+
+1415629907 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/window.h
+	<iostream>
+	<glm/glm.hpp>
+	"input.h"
+
+1415773596 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene.h
+	"input.h"
+	"mesh.h"
+	"shader.h"
+	"camera.h"
+	"transform.h"
+	"timer.h"
+	"camera.h"
+	"texture.h"
+
+1415777355 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/mesh.h
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<iostream>
+	<vector>
+
+1415524401 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/shader.h
+	<string>
+	<GL/glew.h>
+	"transform.h"
+	"camera.h"
+	<iostream>
+	<vector>
+	<map>
+
+1415625805 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/transform.h
+	<glm/glm.hpp>
+	<glm/gtx/transform.hpp>
+
+1415528570 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/timer.h
+
+1414150368 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/texture.h
+	<string>
+	<GL/glew.h>
+
+1415469774 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/renderingengine.h
+	<GL/glew.h>
+	<GL/glut.h>
+	"window.h"
+
+1415630709 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/input.cpp
+	"input.h"
+
+1415481157 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/main.cpp
+	<GL/glew.h>
+	<GL/glut.h>
+	<iostream>
+	"window.h"
+	"coreengine.h"
+	"scene.h"
+	"renderingengine.h"
+
+1415780635 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/mesh.cpp
+	"mesh.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
+1415786594 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/renderingengine.cpp
+	"renderingengine.h"
+
+1415781630 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene.cpp
+	"scene.h"
+
+1415524431 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/shader.cpp
+	"shader.h"
+	<iostream>
+	<fstream>
+
+1414150615 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/texture.cpp
+	"texture.h"
+	<iostream>
+	<SOIL/SOIL.h>
+	<cassert>
+
+1415528619 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/timer.cpp
+	"timer.h"
+	<GL/glew.h>
+	<GL/glut.h>
+
+1415627956 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/window.cpp
+	"window.h"
+	<GL/glew.h>
+	<GL/glut.h>
+	"input.h"
+
