@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="camera.cpp" open="1" top="0" tabpos="8">
+	<File name="boundingbox.cpp" open="1" top="1" tabpos="7">
+		<Cursor position="276" topLine="6" />
+	</File>
+	<File name="boundingbox.h" open="1" top="0" tabpos="6">
+		<Cursor position="90" topLine="7" />
+	</File>
+	<File name="boundingsphere.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="465" topLine="0" />
+	</File>
+	<File name="boundingsphere.h" open="1" top="0" tabpos="4">
+		<Cursor position="97" topLine="0" />
+	</File>
+	<File name="camera.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="86" topLine="0" />
 	</File>
-	<File name="camera.h" open="1" top="0" tabpos="9">
-		<Cursor position="139" topLine="0" />
+	<File name="camera.h" open="0" top="0" tabpos="9">
+		<Cursor position="35" topLine="0" />
 	</File>
-	<File name="coreengine.cpp" open="1" top="0" tabpos="2">
+	<File name="coreengine.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="879" topLine="22" />
 	</File>
 	<File name="coreengine.h" open="0" top="0" tabpos="14">
@@ -19,40 +31,46 @@
 	<File name="input.h" open="0" top="0" tabpos="11">
 		<Cursor position="928" topLine="17" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="444" topLine="0" />
+	<File name="intersect.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="50" topLine="0" />
 	</File>
-	<File name="mesh.cpp" open="1" top="0" tabpos="5">
+	<File name="intersect.h" open="1" top="0" tabpos="1">
+		<Cursor position="124" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="510" topLine="0" />
+	</File>
+	<File name="mesh.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="3091" topLine="86" />
 	</File>
-	<File name="mesh.h" open="1" top="0" tabpos="6">
+	<File name="mesh.h" open="0" top="0" tabpos="6">
 		<Cursor position="1167" topLine="21" />
 	</File>
 	<File name="models/cube.obj" open="0" top="0" tabpos="0">
 		<Cursor position="0" topLine="3" />
 	</File>
-	<File name="renderingengine.cpp" open="1" top="1" tabpos="7">
+	<File name="renderingengine.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="248" topLine="0" />
 	</File>
 	<File name="renderingengine.h" open="0" top="0" tabpos="8">
 		<Cursor position="222" topLine="0" />
 	</File>
-	<File name="scene.cpp" open="1" top="0" tabpos="3">
+	<File name="scene.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="790" topLine="10" />
 	</File>
-	<File name="scene.h" open="1" top="0" tabpos="4">
+	<File name="scene.h" open="0" top="0" tabpos="4">
 		<Cursor position="192" topLine="0" />
 	</File>
 	<File name="shader.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="3106" topLine="58" />
 	</File>
-	<File name="shader.h" open="1" top="0" tabpos="12">
+	<File name="shader.h" open="0" top="0" tabpos="12">
 		<Cursor position="397" topLine="0" />
 	</File>
-	<File name="shaders/basic.fs.glsl" open="1" top="0" tabpos="11">
+	<File name="shaders/basic.fs.glsl" open="0" top="0" tabpos="11">
 		<Cursor position="195" topLine="0" />
 	</File>
-	<File name="shaders/basic.vs.glsl" open="1" top="0" tabpos="10">
+	<File name="shaders/basic.vs.glsl" open="0" top="0" tabpos="10">
 		<Cursor position="243" topLine="0" />
 	</File>
 	<File name="timer.cpp" open="0" top="0" tabpos="6">

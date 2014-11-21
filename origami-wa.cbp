@@ -37,12 +37,18 @@
 			<Add library="GLEW" />
 			<Add library="SOIL" />
 		</Linker>
+		<Unit filename="boundingbox.cpp" />
+		<Unit filename="boundingbox.h" />
+		<Unit filename="boundingsphere.cpp" />
+		<Unit filename="boundingsphere.h" />
 		<Unit filename="camera.cpp" />
 		<Unit filename="camera.h" />
 		<Unit filename="coreengine.cpp" />
 		<Unit filename="coreengine.h" />
 		<Unit filename="input.cpp" />
 		<Unit filename="input.h" />
+		<Unit filename="intersect.cpp" />
+		<Unit filename="intersect.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="mesh.cpp" />
 		<Unit filename="mesh.h" />
