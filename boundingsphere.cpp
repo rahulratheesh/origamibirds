@@ -1,11 +1,11 @@
 #include "boundingsphere.h"
 
-boundingsphere::boundingsphere()
+Boundingsphere::Boundingsphere()
 {
-    //ctor
+
 }
 
-boundingsphere::~boundingsphere()
+Boundingsphere::~Boundingsphere()
 {
-    //dtor
+
 }

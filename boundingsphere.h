@@ -2,11 +2,11 @@
 #define BOUNDINGSPHERE_H
 
 
-class boundingsphere
+class Boundingsphere
 {
     public:
-        boundingsphere();
-        virtual ~boundingsphere();
+        Boundingsphere();
+        virtual ~Boundingsphere();
     protected:
     private:
 };
