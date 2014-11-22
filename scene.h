@@ -1,14 +1,14 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-#include "input.h"
-#include "mesh.h"
-#include "shader.h"
-#include "camera.h"
-#include "transform.h"
-#include "timer.h"
-#include "camera.h"
-#include "texture.h"
+#include "core/input.h"
+#include "rendering/mesh.h"
+#include "rendering/shader.h"
+#include "rendering/camera.h"
+#include "core/transform.h"
+#include "core/timer.h"
+#include "rendering/camera.h"
+#include "rendering/texture.h"
 
 class Scene
 {

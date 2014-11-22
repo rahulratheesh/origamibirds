@@ -14,7 +14,7 @@ class BoundingSphere
         inline glm::vec3 getCenter() const { return m_center; }
         inline float getRadius() const { return m_radius; }
 
-        virtual ~BoundingSphere();
+        virtual ~BoundingSphere() {}
 
     protected:
 

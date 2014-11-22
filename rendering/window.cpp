@@ -1,7 +1,7 @@
 #include "window.h"
 #include <GL/glew.h>
 #include <GL/glut.h>
-#include "input.h"
+#include "../core/input.h"
 
 void renderWrapper();
 void keyboardDownWrapper(unsigned char key, int x, int y);

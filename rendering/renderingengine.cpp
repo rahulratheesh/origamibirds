@@ -1,6 +1,6 @@
 #include "renderingengine.h"
 
-RenderingEngine::RenderingEngine(const Window& window)
+RenderingEngine::RenderingEngine(Window& window)
 {
     m_window = &window;
 

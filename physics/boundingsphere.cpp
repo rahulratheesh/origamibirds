@@ -16,8 +16,3 @@ Intersect BoundingSphere::getIntersection(const BoundingSphere& other)
 
 
 }
-
-BoundingSphere::~BoundingSphere()
-{
-
-}

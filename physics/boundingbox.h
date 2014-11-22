@@ -17,7 +17,7 @@ class BoundingBox
         inline glm::vec3 getMaxExtent() const { return m_maxExtent; }
 
 
-        virtual ~BoundingBox();
+        virtual ~BoundingBox() {}
 
     protected:
 

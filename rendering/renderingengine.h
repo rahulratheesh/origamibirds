@@ -8,16 +8,17 @@
 class RenderingEngine
 {
     public:
-        RenderingEngine(const Window& window);
+        RenderingEngine(Window& window);
 
         void render();
 
+        inline Window* getWindow() const { return m_window; }
         virtual ~RenderingEngine();
 
     protected:
 
     private:
-        const Window* m_window;
+        Window* m_window;
 };
 
 #endif // RENDERINGENGINE_H

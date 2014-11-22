@@ -31,7 +31,3 @@ float BoundingBox::maxValue(const glm::vec3& r)
     }
     return maxVal;
 }
-
-BoundingBox::~BoundingBox()
-{
-}

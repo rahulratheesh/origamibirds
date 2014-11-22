@@ -8,7 +8,6 @@ class Intersect
         Intersect(bool doesIntersect, float distance) :
             m_doesIntersect(doesIntersect),
             m_distance(distance) {}
-        virtual ~Intersect();
 
         inline bool getDoesIntersect() const { return m_doesIntersect; }
         inline float getDistance() const { return m_distance; }

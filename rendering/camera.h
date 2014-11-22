@@ -3,7 +3,7 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
-#include "input.h"
+#include "../core/input.h"
 
 class Camera {
 

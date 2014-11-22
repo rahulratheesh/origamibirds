@@ -3,9 +3,8 @@
 void runWrapper();
 CoreEngine* coreEngineWrapper = NULL;
 
-CoreEngine::CoreEngine(Window* window, Scene* scene, RenderingEngine* renderingEngine)
+CoreEngine::CoreEngine(Scene* scene, RenderingEngine* renderingEngine)
 {
-    m_window = window;
     m_scene = scene;
     m_renderingEngine = renderingEngine;
     m_isRunning = false;
@@ -39,7 +38,7 @@ void CoreEngine::run()
     if (m_isRunning)
     {
         startRender = true;
-        m_scene->processInput( m_window->getInput() );
+        m_scene->processInput( m_renderingEngine->getWindow()->getInput() );
         m_scene->update();
     }
 
@@ -56,7 +55,7 @@ void CoreEngine::render()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     m_scene->render();
-    m_window->render();
+    m_renderingEngine->getWindow()->render();
 }
 
 CoreEngine::~CoreEngine()

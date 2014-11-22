@@ -1,14 +1,14 @@
 #ifndef COREENGINE_H
 #define COREENGINE_H
 
-#include "window.h"
-#include "scene.h"
-#include "renderingengine.h"
+#include "../rendering/window.h"
+#include "../scene.h"
+#include "../rendering/renderingengine.h"
 
 class CoreEngine
 {
     public:
-        CoreEngine(Window* window, Scene* scene, RenderingEngine* renderingEngine);
+        CoreEngine(Scene* scene, RenderingEngine* renderingEngine);
 
         void start();
         void stop();
@@ -20,7 +20,6 @@ class CoreEngine
 
     private:
         bool m_isRunning;
-        Window* m_window;
         Scene* m_scene;
         RenderingEngine* m_renderingEngine;
 };

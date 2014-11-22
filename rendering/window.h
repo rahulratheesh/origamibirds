@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <glm/glm.hpp>
-#include "input.h"
+#include "../core/input.h"
 
 class Window
 {
