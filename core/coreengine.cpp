@@ -35,13 +35,14 @@ void CoreEngine::run()
     if (m_isRunning)
     {
         startRender = true;
-        m_scene->processInput( m_renderingEngine->getWindow()->getInput() );
+        m_scene->input();
+        m_renderingEngine->input( m_renderingEngine->getWindow()->getInput() );
         m_scene->update();
     }
 
     if (startRender)
     {
-        render();
+        m_scene->render(m_renderingEngine);
     }
 
 }
@@ -49,18 +50,4 @@ void CoreEngine::run()
 void runWrapper()
 {
     coreEngineWrapper->run();
-}
-
-void CoreEngine::render()
-{
-    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    m_scene->render();
-    m_renderingEngine->getWindow()->render();
-}
-
-CoreEngine::~CoreEngine()
-{
-    //dtor
 }

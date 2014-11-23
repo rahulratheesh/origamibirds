@@ -15,7 +15,7 @@ class CoreEngine
         void run();
         void render();
 
-        virtual ~CoreEngine();
+        virtual ~CoreEngine() {}
     protected:
 
     private:

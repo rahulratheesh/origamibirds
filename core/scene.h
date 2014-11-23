@@ -1,8 +1,7 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-#include "input.h"
-#include "../rendering/camera.h"
+#include "../rendering/renderingengine.h"
 #include "node.h"
 
 class Scene
@@ -11,14 +10,14 @@ class Scene
         Scene() {}
 
         virtual void init();
-        void processInput(const Input& input);
+        void input();
         void update();
-        void render();
+        void render(RenderingEngine* renderingEngine);
 
         inline Node getRootNode() const { return m_root; }
         Camera* m_camera;
 
-        virtual ~Scene();
+        virtual ~Scene() {}
 
     protected:
         void addToScene(Node* child) { m_root.addChild(child); }

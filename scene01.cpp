@@ -17,8 +17,6 @@ void Scene01::init()
     addToScene(plane);
     plane->addComponent(new MeshRenderer(mesh, *texture));
 
-    m_camera = new  Camera(glm::vec3(0.0, 0.0, 0.0), 70.0, 800.0/600.0, 0.1f, 100.0f);
-
 }
 
 

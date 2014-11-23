@@ -31,7 +31,7 @@ void Camera::lookRight()
     m_position += MOVEMENT_SPEED * strafeDirection;
 }
 
-void Camera::input(const Input& input)
+void Camera::setInput(const Input& input)
 {
     if (input.getKey((int)'w'))
     {

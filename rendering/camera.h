@@ -28,7 +28,7 @@ class Camera {
         void lookLeft();
         void lookRight();
 
-        void input(const Input& input);
+        void setInput(const Input& input);
 
         virtual ~Camera() {}
 
