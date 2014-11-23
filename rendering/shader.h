@@ -15,7 +15,7 @@ class Shader {
         Shader(const std::string& file_name = "basic");
 
 
-        void bind();
+        void bind() const;
         void update(const Transform& transform, const Camera& camera);
 
         void addUniform(std::string uniformName);

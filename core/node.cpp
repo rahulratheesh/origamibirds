@@ -1,4 +1,5 @@
 #include "node.h"
+#include "component.h"
 
 void Node::input()
 {
@@ -24,15 +25,15 @@ void Node::update()
     }
 }
 
-void Node::render()
+void Node::render(const Shader& shader, const Camera& camera)
 {
     for (unsigned int i = 0; i < m_components.size(); i++)
     {
-        m_components[i]->render();
+        m_components[i]->render(shader, camera);
     }
     for (unsigned int i = 0; i < m_children.size(); i++)
     {
-        m_children[i]->render();
+        m_children[i]->render(shader, camera);
     }
 }
 

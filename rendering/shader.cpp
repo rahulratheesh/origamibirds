@@ -91,7 +91,7 @@ void Shader::create(const std::string& shaderText, GLenum shaderType) {
 	m_shaders.push_back(shader);
 }
 
-void Shader::bind() {
+void Shader::bind() const {
     glUseProgram(m_program);
 }
 

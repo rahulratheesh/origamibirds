@@ -12,6 +12,7 @@ int main(int argc, char* argv[])
     RenderingEngine renderingEngine(window);
 
     Scene scene;
+    scene.init();
     CoreEngine coreEngine(&scene, &renderingEngine);
     coreEngine.start();
 

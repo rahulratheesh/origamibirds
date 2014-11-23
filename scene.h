@@ -9,12 +9,14 @@
 #include "core/timer.h"
 #include "rendering/camera.h"
 #include "rendering/texture.h"
+#include "core/node.h"
 
 class Scene
 {
     public:
-        Scene();
+        Scene() {}
 
+        void init();
         void processInput(const Input& input);
         void update();
         void render();
@@ -24,6 +26,7 @@ class Scene
 
     private:
 
+        Node m_root;
         Mesh* m_mesh;
         Shader* m_shader;
         Texture* m_texture;

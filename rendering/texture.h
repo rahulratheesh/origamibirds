@@ -14,8 +14,6 @@ class Texture {
     protected:
 
     private:
-        Texture(const Texture& other) {}
-        void operator=(const Texture& other) {}
         GLuint texture;
 };
 

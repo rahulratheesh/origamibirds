@@ -2,8 +2,11 @@
 #define NODE_H
 
 #include <vector>
-#include "component.h"
 #include "transform.h"
+
+class Component;
+class Shader;
+class Camera;
 
 class Node
 {
@@ -12,7 +15,7 @@ class Node
 
         void input();
         void update();
-        void render();
+        void render(const Shader& shader, const Camera& camera);
 
         void addChild(Node* child);
         void addComponent(Component* component);
