@@ -1,8 +1,8 @@
 #include "physicsengine.h"
 
-void PhysicsEngine::addPObject(const PhysicsObject& po)
+void PhysicsEngine::addObject(const PhysicsObject& physicsObject)
 {
-    m_objects.push_back(po);
+    m_objects.push_back(physicsObject);
 }
 
 void PhysicsEngine::simulate(float delta)

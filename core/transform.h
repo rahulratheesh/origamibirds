@@ -15,14 +15,14 @@ class Transform {
         }
         virtual ~Transform() {}
 
-        inline glm::vec3& getTranslateVector() { return m_translate_vector; }
-        inline glm::vec3& getRotateVector() { return m_rotate_vector; }
-        inline glm::vec3& getScaleVector() { return m_scale_vector; }
+        inline glm::vec3& getTranslate() { return m_translate_vector; }
+        inline glm::vec3& getRotate() { return m_rotate_vector; }
+        inline glm::vec3& getScale() { return m_scale_vector; }
 
-        inline void setTranslateVector(const glm::vec3& translate_vector) { this->m_translate_vector = translate_vector; }
-        inline void setTranslateVector(double x, double y, double z) { this->m_translate_vector = glm::vec3(x, y, z); }
-        inline void setRotateVector(const glm::vec3& rotate_vector) { this->m_rotate_vector = rotate_vector; }
-        inline void setScaleVector(const glm::vec3& scale_vector) { this->m_scale_vector = scale_vector; }
+        inline void setTranslate(const glm::vec3& translate_vector) { this->m_translate_vector = translate_vector; }
+        inline void setTranslate(double x, double y, double z) { this->m_translate_vector = glm::vec3(x, y, z); }
+        inline void setRotate(const glm::vec3& rotate_vector) { this->m_rotate_vector = rotate_vector; }
+        inline void setScale(const glm::vec3& scale_vector) { this->m_scale_vector = scale_vector; }
 
         inline glm::mat4 getModel() const {
 
