@@ -18,18 +18,17 @@ void Scene::init()
     m_shader = new Shader();
     m_shader->addUniform("u_transform");
 
-//    Shader shader;
-//    shader.addUniform("u_transform");
-
     m_texture = new Texture("textures/grass.jpg");
     //Texture texture("textures/grass.jpg");
 
-    //MeshRenderer meshRenderer(mesh, texture);
-    //m_root.addComponent(&meshRenderer);
+    //MeshRenderer* meshRenderer = new MeshRenderer(mesh, texture);
+    //m_root.addComponent(meshRenderer);
+
 
     m_transform = new Transform();
 
     m_camera = new  Camera(glm::vec3(0.0, 0.0, 0.0), 70.0, 800.0/600.0, 0.1f, 100.0f);
+
 }
 
 void Scene::processInput(const Input& input)
@@ -52,7 +51,10 @@ void Scene::render()
     m_shader->setUniformMatrix4f("u_transform", mvp);
     m_mesh->draw();
 
-//    m_root.render();
+//    Shader shader;
+//    shader.addUniform("u_transform");
+//    Camera camera(glm::vec3(0.0, 0.0, 0.0), 70.0, 800.0/600.0, 0.1f, 100.0f);
+//    m_root.render(shader, camera);
 }
 
 Scene::~Scene()

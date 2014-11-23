@@ -13,6 +13,12 @@ class MeshRenderer : public Component
             m_mesh(mesh),
             m_texture(texture) {}
 
+        void input()
+        {
+
+        }
+        void update() {}
+
         void render(const Shader& shader, const Camera& camera)
         {
             shader.bind();

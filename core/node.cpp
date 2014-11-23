@@ -1,5 +1,6 @@
 #include "node.h"
 #include "component.h"
+#include <iostream>
 
 void Node::input()
 {
@@ -45,4 +46,5 @@ void Node::addChild(Node* child)
 void Node::addComponent(Component* component)
 {
     m_components.push_back(component);
+    component->setParent(this);
 }

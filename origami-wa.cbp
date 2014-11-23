@@ -42,6 +42,7 @@
 		<Unit filename="core/coreengine.h" />
 		<Unit filename="core/input.cpp" />
 		<Unit filename="core/input.h" />
+		<Unit filename="core/meshrenderer.h" />
 		<Unit filename="core/node.cpp" />
 		<Unit filename="core/node.h" />
 		<Unit filename="core/timer.cpp" />

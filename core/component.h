@@ -2,6 +2,7 @@
 #define COMPONENT_H_INCLUDED
 
 #include "node.h"
+#include <iostream>
 
 class Component
 {
@@ -11,6 +12,8 @@ class Component
         virtual void render(const Shader& shader, const Camera& camera) {}
 
         inline Transform getTransform() { return m_parent->getTransform(); }
+
+        virtual void setParent(Node* parent) { m_parent = parent; }
 
     private:
         Node* m_parent;
