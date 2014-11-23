@@ -135,15 +135,9 @@
 	<glm/glm.hpp>
 	"input.h"
 
-1416725486 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene.h
+1416737752 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene.h
 	"core/input.h"
-	"rendering/mesh.h"
-	"rendering/shader.h"
 	"rendering/camera.h"
-	"core/transform.h"
-	"core/timer.h"
-	"rendering/camera.h"
-	"rendering/texture.h"
 	"core/node.h"
 
 1415777355 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/mesh.h
@@ -179,13 +173,13 @@
 1415630709 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/input.cpp
 	"input.h"
 
-1416722148 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/main.cpp
+1416737573 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/main.cpp
 	<GL/glew.h>
 	<GL/glut.h>
 	<iostream>
 	"rendering/window.h"
 	"core/coreengine.h"
-	"scene.h"
+	"scene01.h"
 	"rendering/renderingengine.h"
 
 1415780635 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/mesh.cpp
@@ -197,9 +191,8 @@
 1415799572 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/renderingengine.cpp
 	"renderingengine.h"
 
-1416724911 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene.cpp
+1416737724 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene.cpp
 	"scene.h"
-	"core/meshrenderer.h"
 
 1415524431 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/shader.cpp
 	"shader.h"
@@ -405,18 +398,18 @@
 	<iostream>
 	<glm/glm.hpp>
 
-1415625805 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/transform.h
+1416726577 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/transform.h
 	<glm/glm.hpp>
 	<glm/gtx/transform.hpp>
 
 1415528570 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/timer.h
 
-1416725313 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/coreengine.cpp
+1416736491 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/coreengine.cpp
 	"coreengine.h"
 
-1416681497 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/coreengine.h
+1416738430 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/coreengine.h
 	"../rendering/window.h"
-	"../scene.h"
+	"scene.h"
 	"../rendering/renderingengine.h"
 
 1415630709 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/input.cpp
@@ -452,7 +445,7 @@
 	<vector>
 	<map>
 
-1416680573 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/camera.h
+1416734467 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/camera.h
 	<glm/glm.hpp>
 	<glm/gtx/transform.hpp>
 	"../core/input.h"
@@ -461,7 +454,7 @@
 	<string>
 	<GL/glew.h>
 
-1415770472 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/camera.cpp
+1416734618 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/camera.cpp
 	"camera.h"
 
 1415780635 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/mesh.cpp
@@ -534,7 +527,7 @@
 	"component.h"
 	<iostream>
 
-1416720018 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/node.h
+1416726786 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/node.h
 	<vector>
 	"transform.h"
 
@@ -542,9 +535,26 @@
 	"node.h"
 	<iostream>
 
-1416725083 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/meshrenderer.h
+1416736687 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/meshrenderer.h
 	"component.h"
 	"../rendering/mesh.h"
 	"../rendering/texture.h"
+	"../rendering/shader.h"
 	<glm/glm.hpp>
+
+1416738981 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene01.cpp
+	"scene01.h"
+	"core/meshrenderer.h"
+
+1416738784 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene01.h
+	"core/scene.h"
+
+1416738899 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/scene.cpp
+	"scene.h"
+	"../rendering/shader.h"
+
+1416738831 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/scene.h
+	"input.h"
+	"../rendering/camera.h"
+	"node.h"
 

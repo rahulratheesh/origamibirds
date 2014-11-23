@@ -2,22 +2,25 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="core/component.h" open="1" top="0" tabpos="5">
-		<Cursor position="251" topLine="0" />
+		<Cursor position="159" topLine="0" />
 	</File>
 	<File name="core/coreengine.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="722" topLine="33" />
+		<Cursor position="800" topLine="27" />
 	</File>
 	<File name="core/coreengine.h" open="0" top="0" tabpos="2">
 		<Cursor position="413" topLine="2" />
 	</File>
-	<File name="core/meshrenderer.h" open="1" top="1" tabpos="7">
-		<Cursor position="216" topLine="6" />
+	<File name="core/meshrenderer.h" open="1" top="0" tabpos="7">
+		<Cursor position="423" topLine="9" />
 	</File>
 	<File name="core/node.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="300" topLine="0" />
+		<Cursor position="82" topLine="2" />
 	</File>
 	<File name="core/node.h" open="1" top="0" tabpos="3">
-		<Cursor position="270" topLine="9" />
+		<Cursor position="312" topLine="11" />
+	</File>
+	<File name="core/transform.h" open="1" top="0" tabpos="9">
+		<Cursor position="365" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
 		<Cursor position="340" topLine="0" />
@@ -37,14 +40,14 @@
 	<File name="rendering/shader.h" open="0" top="0" tabpos="0">
 		<Cursor position="570" topLine="6" />
 	</File>
-	<File name="rendering/texture.h" open="1" top="0" tabpos="9">
+	<File name="rendering/texture.h" open="0" top="0" tabpos="9">
 		<Cursor position="269" topLine="0" />
 	</File>
 	<File name="scene.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="1003" topLine="30" />
+		<Cursor position="470" topLine="0" />
 	</File>
 	<File name="scene.h" open="1" top="0" tabpos="8">
-		<Cursor position="582" topLine="13" />
+		<Cursor position="519" topLine="9" />
 	</File>
 	<File name="shaders/basic.fs.glsl" open="0" top="0" tabpos="11">
 		<Cursor position="195" topLine="0" />

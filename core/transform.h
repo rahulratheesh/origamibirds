@@ -6,8 +6,8 @@
 
 class Transform {
     public:
-        Transform(const glm::vec3 translate_vector = glm::vec3(),
-                  const glm::vec3 rotate_vector = glm::vec3(),
+        Transform(const glm::vec3 translate_vector = glm::vec3(0.0f, 0.0f, 0.0f),
+                  const glm::vec3 rotate_vector = glm::vec3(0.0f, 0.0f, 0.0f),
                   const glm::vec3 scale_vector = glm::vec3(1.0f, 1.0f, 1.0f)) {
             m_translate_vector = translate_vector;
             m_rotate_vector = rotate_vector;

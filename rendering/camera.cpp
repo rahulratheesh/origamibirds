@@ -19,13 +19,13 @@ void Camera::moveBackward()
     m_position += -MOVEMENT_SPEED * m_direction;
 }
 
-void Camera::strafeLeft()
+void Camera::lookLeft()
 {
     glm::vec3 strafeDirection = glm::cross(m_direction, m_up);
     m_position += -MOVEMENT_SPEED * strafeDirection;
 }
 
-void Camera::strafeRight()
+void Camera::lookRight()
 {
     glm::vec3 strafeDirection = glm::cross(m_direction, m_up);
     m_position += MOVEMENT_SPEED * strafeDirection;
@@ -39,7 +39,7 @@ void Camera::input(const Input& input)
     }
     if (input.getKey((int)'a'))
     {
-        strafeLeft();
+        lookLeft();
     }
     if (input.getKey((int)'s'))
     {
@@ -47,7 +47,7 @@ void Camera::input(const Input& input)
     }
     if (input.getKey((int)'d'))
     {
-        strafeRight();
+        lookRight();
     }
 }
 

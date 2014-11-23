@@ -4,6 +4,7 @@
 #include "component.h"
 #include "../rendering/mesh.h"
 #include "../rendering/texture.h"
+#include "../rendering/shader.h"
 #include <glm/glm.hpp>
 
 class MeshRenderer : public Component
@@ -13,10 +14,7 @@ class MeshRenderer : public Component
             m_mesh(mesh),
             m_texture(texture) {}
 
-        void input()
-        {
-
-        }
+        void input() {}
         void update() {}
 
         void render(const Shader& shader, const Camera& camera)

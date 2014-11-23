@@ -14,13 +14,10 @@ void CoreEngine::start()
 {
     if (m_isRunning) return;
 
+    m_scene->init();
+
     coreEngineWrapper = this;
     glutIdleFunc( runWrapper );
-}
-
-void runWrapper()
-{
-    coreEngineWrapper->run();
 }
 
 void CoreEngine::stop()
@@ -47,6 +44,11 @@ void CoreEngine::run()
         render();
     }
 
+}
+
+void runWrapper()
+{
+    coreEngineWrapper->run();
 }
 
 void CoreEngine::render()

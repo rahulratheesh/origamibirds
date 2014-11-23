@@ -25,8 +25,8 @@ class Camera {
 
         void moveForward();
         void moveBackward();
-        void strafeLeft();
-        void strafeRight();
+        void lookLeft();
+        void lookRight();
 
         void input(const Input& input);
 

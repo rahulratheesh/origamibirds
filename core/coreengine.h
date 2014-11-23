@@ -2,7 +2,7 @@
 #define COREENGINE_H
 
 #include "../rendering/window.h"
-#include "../scene.h"
+#include "scene.h"
 #include "../rendering/renderingengine.h"
 
 class CoreEngine
