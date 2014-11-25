@@ -3,6 +3,7 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
+#include <iostream>
 
 class Transform {
     public:
@@ -12,6 +13,8 @@ class Transform {
             m_translate_vector = translate_vector;
             m_rotate_vector = rotate_vector;
             m_scale_vector = scale_vector;
+            m_parent = NULL;
+            parent_matrix = glm::mat4(1);
         }
         virtual ~Transform() {}
 
@@ -23,8 +26,9 @@ class Transform {
         inline void setTranslate(double x, double y, double z) { this->m_translate_vector = glm::vec3(x, y, z); }
         inline void setRotate(const glm::vec3& rotate_vector) { this->m_rotate_vector = rotate_vector; }
         inline void setScale(const glm::vec3& scale_vector) { this->m_scale_vector = scale_vector; }
+        inline void setParent(Transform* parent) { this->m_parent = parent; }
 
-        inline glm::mat4 getModel() const {
+        inline glm::mat4 getModel() {
 
             glm::mat4 translate_matrix = glm::translate(m_translate_vector);
 
@@ -35,7 +39,11 @@ class Transform {
 
             glm::mat4 scale_matrix = glm::scale(m_scale_vector);
 
-            return translate_matrix * rotate_matrix * scale_matrix;
+            // setup transformation hierarchy
+            if (m_parent)
+                parent_matrix = m_parent->getModel();
+
+            return parent_matrix * translate_matrix * rotate_matrix * scale_matrix;
 
         }
 
@@ -45,6 +53,11 @@ class Transform {
         glm::vec3 m_translate_vector;
         glm::vec3 m_rotate_vector;
         glm::vec3 m_scale_vector;
+
+        Transform* m_parent;
+        glm::mat4 parent_matrix;
+
+
 };
 
 #endif // TRANSFORM_H

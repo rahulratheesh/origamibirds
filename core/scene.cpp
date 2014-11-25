@@ -5,14 +5,14 @@ void Scene::init()
 {
 }
 
-void Scene::input()
+void Scene::input(float delta)
 {
-    m_root.input();
+    m_root.input(delta);
 }
 
-void Scene::update()
+void Scene::update(float delta)
 {
-    m_root.update();
+    m_root.update(delta);
 }
 
 void Scene::render(RenderingEngine* renderingEngine)

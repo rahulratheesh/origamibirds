@@ -7,7 +7,7 @@ double Timer::getElapsedTimeInMilliSeconds()
     return glutGet(GLUT_ELAPSED_TIME);
 }
 
-double getElapsedTimeInSeconds()
+double Timer::getElapsedTimeInSeconds()
 {
     return glutGet(GLUT_ELAPSED_TIME) / 1000.0;
 }

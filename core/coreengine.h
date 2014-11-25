@@ -20,6 +20,7 @@ class CoreEngine
 
     private:
         bool m_isRunning;
+        float m_frameTime;
         Scene* m_scene;
         RenderingEngine* m_renderingEngine;
 };

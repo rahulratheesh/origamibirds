@@ -1,15 +1,22 @@
+/**
+Todo: http://hamelot.co.uk/visualization/moderngl-camera/
+**/
+
 #ifndef CAMERA_H
 #define CAMERA_H
 
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
+#include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/quaternion.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include "../core/input.h"
 
 class Camera {
 
     public:
 
-        Camera(const glm::vec3& position, float fov, float aspect, float zNear, float zFar);
+        Camera(float fov, float aspect, float zNear, float zFar);
 
         inline glm::vec3& getPosiiton() { return m_position; }
         inline glm::vec3& getDirection() { return m_direction; }
@@ -27,6 +34,10 @@ class Camera {
         void moveBackward();
         void lookLeft();
         void lookRight();
+        void moveDown();
+        void moveUp();
+
+        void update();
 
         void setInput(const Input& input);
 
@@ -39,6 +50,7 @@ class Camera {
         glm::vec3 m_position;
         glm::vec3 m_direction;
         glm::vec3 m_up;
+
         float MOVEMENT_SPEED;
 };
 

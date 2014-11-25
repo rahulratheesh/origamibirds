@@ -1,11 +1,12 @@
 #include "camera.h"
 
-Camera::Camera(const glm::vec3& position, float fov, float aspect, float zNear, float zFar)
+Camera::Camera(float fov, float aspect, float zNear, float zFar)
 {
     m_perspective = glm::perspective(fov, aspect, zNear, zFar);
-    m_position = position;
+    m_position = glm::vec3(0.0, 0.0, 0.0);
     m_direction = glm::vec3(0.0, 0.0, -1.0);
     m_up = glm::vec3(0.0, 1.0, 0.0);
+
     MOVEMENT_SPEED = 0.01f;
 }
 
@@ -31,6 +32,16 @@ void Camera::lookRight()
     m_position += MOVEMENT_SPEED * strafeDirection;
 }
 
+void Camera::moveDown()
+{
+    m_position += MOVEMENT_SPEED * m_up;
+}
+
+void Camera::moveUp()
+{
+    m_position -= MOVEMENT_SPEED * m_up;
+}
+
 void Camera::setInput(const Input& input)
 {
     if (input.getKey((int)'w'))
@@ -49,6 +60,16 @@ void Camera::setInput(const Input& input)
     {
         lookRight();
     }
+    if (input.getKey((int)'q'))
+    {
+        moveDown();
+    }
+    if (input.getKey((int)'e'))
+    {
+        moveUp();
+    }
 }
+
+
 
 

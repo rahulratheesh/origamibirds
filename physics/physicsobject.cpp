@@ -1,4 +1,5 @@
 #include "physicsobject.h"
+#include <iostream>
 
 void PhysicsObject::move(float delta)
 {

@@ -17,14 +17,14 @@ class Node
             m_transform(pos, rot, scale)
             {}
 
-        void input();
-        void update();
+        void input(float delta);
+        void update(float delta);
         void render(const Shader& shader, const Camera& camera);
 
         void addChild(Node* child);
         void addComponent(Component* component);
 
-        inline Transform getTransform() const { return m_transform; }
+        inline Transform* getTransform() { return &m_transform; }
 
         virtual ~Node() {}
     protected:

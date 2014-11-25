@@ -45,6 +45,8 @@
 		<Unit filename="core/meshrenderer.h" />
 		<Unit filename="core/node.cpp" />
 		<Unit filename="core/node.h" />
+		<Unit filename="core/scene.cpp" />
+		<Unit filename="core/scene.h" />
 		<Unit filename="core/timer.cpp" />
 		<Unit filename="core/timer.h" />
 		<Unit filename="core/transform.h" />
@@ -52,6 +54,7 @@
 		<Unit filename="models/cube.obj" />
 		<Unit filename="models/cylinder.obj" />
 		<Unit filename="models/plane.obj" />
+		<Unit filename="models/sphere.obj" />
 		<Unit filename="physics/boundingbox.cpp" />
 		<Unit filename="physics/boundingbox.h" />
 		<Unit filename="physics/boundingsphere.cpp" />
@@ -60,8 +63,12 @@
 		<Unit filename="physics/intersect.h" />
 		<Unit filename="physics/physicsengine.cpp" />
 		<Unit filename="physics/physicsengine.h" />
+		<Unit filename="physics/physicsenginecomponent.cpp" />
+		<Unit filename="physics/physicsenginecomponent.h" />
 		<Unit filename="physics/physicsobject.cpp" />
 		<Unit filename="physics/physicsobject.h" />
+		<Unit filename="physics/physicsobjectcomponent.cpp" />
+		<Unit filename="physics/physicsobjectcomponent.h" />
 		<Unit filename="physics/plane.cpp" />
 		<Unit filename="physics/plane.h" />
 		<Unit filename="rendering/camera.cpp" />
@@ -76,8 +83,8 @@
 		<Unit filename="rendering/texture.h" />
 		<Unit filename="rendering/window.cpp" />
 		<Unit filename="rendering/window.h" />
-		<Unit filename="scene.cpp" />
-		<Unit filename="scene.h" />
+		<Unit filename="scene01.cpp" />
+		<Unit filename="scene01.h" />
 		<Unit filename="shaders/basic.fs.glsl" />
 		<Unit filename="shaders/basic.vs.glsl" />
 		<Unit filename="textures/grass.jpg" />

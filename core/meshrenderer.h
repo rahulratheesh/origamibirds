@@ -14,13 +14,13 @@ class MeshRenderer : public Component
             m_mesh(mesh),
             m_texture(texture) {}
 
-        void input() {}
-        void update() {}
+        void input(float delta) {}
+        void update(float delta) {}
 
         void render(const Shader& shader, const Camera& camera)
         {
             shader.bind();
-            glm::mat4 mvp = camera.getViewProjection() * getTransform().getModel();
+            glm::mat4 mvp = camera.getViewProjection() * getTransform()->getModel();
             shader.setUniformMatrix4f("u_transform", mvp);
             m_mesh.draw();
         }

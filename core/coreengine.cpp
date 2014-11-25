@@ -1,4 +1,5 @@
 #include "coreengine.h"
+#include "timer.h"
 
 void runWrapper();
 CoreEngine* coreEngineWrapper = NULL;
@@ -8,6 +9,7 @@ CoreEngine::CoreEngine(Scene* scene, RenderingEngine* renderingEngine)
     m_scene = scene;
     m_renderingEngine = renderingEngine;
     m_isRunning = false;
+    m_frameTime = 1/60.0;
 }
 
 void CoreEngine::start()
@@ -35,9 +37,9 @@ void CoreEngine::run()
     if (m_isRunning)
     {
         startRender = true;
-        m_scene->input();
+        m_scene->input(m_frameTime);
         m_renderingEngine->input( m_renderingEngine->getWindow()->getInput() );
-        m_scene->update();
+        m_scene->update(m_frameTime);
     }
 
     if (startRender)

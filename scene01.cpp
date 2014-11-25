@@ -13,32 +13,28 @@ void Scene01::init()
 
     Mesh mesh;
     mesh.init(indexedMesh);
-    Texture* texture = new Texture("textures/grass.jpg");
 
-//    Node* plane = new Node(glm::vec3(0.0, -1.0, -5.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f));
-//    addToScene(plane);
-//    plane->addComponent(new MeshRenderer(mesh, *texture));
+    Texture* texture = new Texture("textures/crate.jpg");
 
-
+    Node* plane1 = new Node(glm::vec3(0.0, -3.0, -5.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f));
+    plane1->addComponent(new MeshRenderer(mesh, *texture));
+    addToScene(plane1);
 
     PhysicsEngine physicsEngine;
-    glm::vec3 pos = glm::vec3(0.0f, -1.0f, -5.0f);
-    PhysicsObject physicsObject(pos, glm::vec3(0.0f, 1.0f, 0.0f));
+    glm::vec3 pos = glm::vec3(-3.0, -1.0, -5.0);
+    PhysicsObject physicsObject(pos, glm::vec3(0.0f, 0.1f, 0.0f));
     physicsEngine.addObject(physicsObject);
 
     PhysicsEngineComponent* physicsEngineComponent = new PhysicsEngineComponent(physicsEngine);
 
-    for (unsigned int i = 0; i < physicsEngineComponent->getPhysicsEngine().getNumObjects(); i++)
-    {
-        Node* physicsObjectNode = new Node(pos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f));
-        addToScene(physicsObjectNode);
-        physicsObjectNode->addComponent(new PhysicsObjectComponent(&physicsEngineComponent->getPhysicsEngine().getObject(i)));
-        physicsObjectNode->addComponent(new MeshRenderer(mesh, *texture));
-    }
+    Node* plane2 = new Node(pos, glm::vec3(0.0f, 45.0f, 0.0f), glm::vec3(0.25f, 0.25f, 0.25f));
+    plane2->addComponent(new PhysicsObjectComponent(&physicsEngineComponent->getPhysicsEngine().getObject(0)));
+    plane2->addComponent(new MeshRenderer(mesh, *texture));
+    addToScene(plane2);
 
-//    Node* physicsNode = new Node;
-//    addToScene(physicsNode);
-//    physicsNode->addComponent(physicsEngineComponent);
+    Node* physicsEngineNode = new Node;
+    physicsEngineNode->addComponent(physicsEngineComponent);
+    addToScene(physicsEngineNode);
 
 }
 

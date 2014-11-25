@@ -7,13 +7,13 @@
 class Component
 {
     public:
-        virtual void input() {}
-        virtual void update() {}
+        virtual void input(float delta) {}
+        virtual void update(float delta) {}
         virtual void render(const Shader& shader, const Camera& camera) {}
 
-        inline Transform getTransform() { return m_parent->getTransform(); }
+        inline Transform* getTransform() { return m_parent->getTransform(); }
 
-        virtual void setParent(Node* parent) { m_parent = parent; }
+        void setParent(Node* parent) { m_parent = parent; }
 
     private:
         Node* m_parent;
