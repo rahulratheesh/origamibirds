@@ -1,8 +1,8 @@
 #ifndef PHYSICSOBJECTCOMPONENT_H
 #define PHYSICSOBJECTCOMPONENT_H
 
-#include "../core/component.h"
-#include "physicsobject.h"
+#include "component.h"
+#include "../physics/physicsobject.h"
 
 class PhysicsObjectComponent : public Component
 {

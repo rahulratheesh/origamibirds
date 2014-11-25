@@ -1,8 +1,8 @@
 #ifndef PHYSICSENGINECOMPONENT_H
 #define PHYSICSENGINECOMPONENT_H
 
-#include "../core/component.h"
-#include "physicsengine.h"
+#include "component.h"
+#include "../physics/physicsengine.h"
 
 class PhysicsEngineComponent : public Component
 {

@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "physicsobject.h"
+#include <iostream>
 
 class PhysicsEngine
 {
@@ -11,6 +12,7 @@ class PhysicsEngine
 
         void addObject(const PhysicsObject& physicsObject);
         void simulate(float delta);
+        void handleCollision();
 
         inline const PhysicsObject& getObject(unsigned int index) const { return m_objects[index]; }
         inline unsigned int getNumObjects() const { return m_objects.size(); }

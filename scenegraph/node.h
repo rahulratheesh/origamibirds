@@ -2,7 +2,7 @@
 #define NODE_H
 
 #include <vector>
-#include "transform.h"
+#include "../core/transform.h"
 
 class Component;
 class Shader;

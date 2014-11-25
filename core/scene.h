@@ -2,7 +2,7 @@
 #define SCENE_H
 
 #include "../rendering/renderingengine.h"
-#include "node.h"
+#include "../scenegraph/node.h"
 
 class Scene
 {

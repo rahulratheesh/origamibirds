@@ -9,7 +9,7 @@ RenderingEngine::RenderingEngine(Window& window)
 
     glFrontFace(GL_CCW);
     glCullFace(GL_BACK);
-    glEnable(GL_CULL_FACE);
+    //glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_DEPTH_CLAMP);
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);

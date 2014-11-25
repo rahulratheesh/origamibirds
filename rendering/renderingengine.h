@@ -6,7 +6,7 @@
 #include "window.h"
 #include "camera.h"
 #include "shader.h"
-#include "../core/node.h"
+#include "../scenegraph/node.h"
 #include "../core/input.h"
 
 class RenderingEngine

@@ -59,7 +59,6 @@
 		<Unit filename="physics/boundingbox.h" />
 		<Unit filename="physics/boundingsphere.cpp" />
 		<Unit filename="physics/boundingsphere.h" />
-		<Unit filename="physics/intersect.cpp" />
 		<Unit filename="physics/intersect.h" />
 		<Unit filename="physics/physicsengine.cpp" />
 		<Unit filename="physics/physicsengine.h" />
