@@ -22,14 +22,16 @@ void Camera::moveBackward()
 
 void Camera::lookLeft()
 {
-    glm::vec3 strafeDirection = glm::cross(m_direction, m_up);
-    m_position += -MOVEMENT_SPEED * strafeDirection;
+    glm::vec3 left = glm::normalize(glm::cross(m_direction, m_up));
+    left = -MOVEMENT_SPEED * left;
+    m_position += left;
 }
 
 void Camera::lookRight()
 {
-    glm::vec3 strafeDirection = glm::cross(m_direction, m_up);
-    m_position += MOVEMENT_SPEED * strafeDirection;
+    glm::vec3 right = glm::normalize(glm::cross(m_direction, m_up));
+    right = MOVEMENT_SPEED * right;
+    m_position += right;
 }
 
 void Camera::moveDown()

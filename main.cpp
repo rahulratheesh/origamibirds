@@ -4,11 +4,12 @@
 #include "rendering/window.h"
 #include "core/coreengine.h"
 #include "scene02.h"
+#include "scene01.h"
 #include "rendering/renderingengine.h"
 
 int main(int argc, char* argv[])
 {
-    Window window(argc, argv, 800, 600, "OpenGL window");
+    Window window(argc, argv, 1000, 500, "OpenGL window");
     RenderingEngine renderingEngine(window);
 
     Scene02 scene;

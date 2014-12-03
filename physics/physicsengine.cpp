@@ -11,7 +11,7 @@ void PhysicsEngine::simulate(float delta)
 {
     for (unsigned int i = 0; i < m_objects.size(); i++)
     {
-        //m_objects[i].setVelocity(m_objects[i].getVelocity() + cohesion(i));
+        m_objects[i].setVelocity(0.01f * (m_objects[i].getVelocity() + cohesion(i)));
         m_objects[i].move(delta);
     }
 }

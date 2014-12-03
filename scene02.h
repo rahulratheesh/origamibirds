@@ -12,8 +12,6 @@ class Scene02 : public Scene
         void update(float delta);
 
         virtual ~Scene02() {}
-    protected:
-    private:
 };
 
 #endif // SCENE02_H
