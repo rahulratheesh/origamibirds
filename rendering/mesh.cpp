@@ -65,6 +65,88 @@ void Mesh::init(Vertex* vertices, unsigned int numVertices, unsigned int* indice
     init(indexedMesh);
 }
 
+void Mesh::initTriangle()
+{
+    Vertex vertices[] = { Vertex( glm::vec3(-1.0, -1.0, 0.0), glm::vec2(0.0, 0.0)),
+                          Vertex( glm::vec3(1.0, -1.0, 0.0), glm::vec2(0.0, 1.0)),
+                          Vertex( glm::vec3(0.0, 1.0, 0.0), glm::vec2(0.5, 1.0))
+                        };
+    unsigned int indices[] = {0, 1, 2,};
+
+    init(vertices, sizeof(vertices)/sizeof(vertices[0]), indices, sizeof(indices)/sizeof(indices[0]));
+}
+
+void Mesh::initSquare()
+{
+    Vertex vertices[] = { Vertex( glm::vec3(0.5, 0.5, 0.0), glm::vec2(1.0, 1.0)),
+                          Vertex( glm::vec3(-0.5, 0.5, 0.0), glm::vec2(0.0, 1.0)),
+                          Vertex( glm::vec3(-0.5, -0.5, 0.0), glm::vec2(0.0, 0.0)),
+                          Vertex( glm::vec3(0.5, -0.5, 0.0), glm::vec2(1.0, 0.0))
+                        };
+    unsigned int indices[] = {0, 1, 2,
+                                2, 3, 0};
+
+    init(vertices, sizeof(vertices)/sizeof(vertices[0]), indices, sizeof(indices)/sizeof(indices[0]));
+}
+
+void Mesh::initCube()
+{
+    Vertex vertices[] = {
+        // front
+        Vertex( glm::vec3(-1.0, -1.0,  1.0), glm::vec2(0.0, 0.0) ),
+        Vertex( glm::vec3( 1.0, -1.0,  1.0), glm::vec2(1.0, 0.0) ),
+        Vertex( glm::vec3( 1.0,  1.0,  1.0), glm::vec2(1.0, 1.0) ),
+        Vertex( glm::vec3(-1.0,  1.0,  1.0), glm::vec2(0.0, 1.0) ),
+        // top - we don't need the texture at top hence passing 0
+        Vertex( glm::vec3(-1.0,  1.0,  1.0), glm::vec2(0.0, 0.0) ),
+        Vertex( glm::vec3( 1.0,  1.0,  1.0), glm::vec2(0.0, 0.0) ),
+        Vertex( glm::vec3( 1.0,  1.0, -1.0), glm::vec2(0.0, 0.0) ),
+        Vertex( glm::vec3(-1.0,  1.0, -1.0), glm::vec2(0.0, 0.0) ),
+        // back
+        Vertex( glm::vec3( 1.0, -1.0, -1.0), glm::vec2(0.0, 0.0) ),
+        Vertex( glm::vec3(-1.0, -1.0, -1.0), glm::vec2(1.0, 0.0) ),
+        Vertex( glm::vec3(-1.0,  1.0, -1.0), glm::vec2(1.0, 1.0) ),
+        Vertex( glm::vec3( 1.0,  1.0, -1.0), glm::vec2(0.0, 1.0) ),
+        // bottom
+        Vertex( glm::vec3(-1.0, -1.0, -1.0), glm::vec2(0.0, 0.0) ),
+        Vertex( glm::vec3( 1.0, -1.0, -1.0), glm::vec2(1.0, 0.0) ),
+        Vertex( glm::vec3( 1.0, -1.0,  1.0), glm::vec2(1.0, 1.0) ),
+        Vertex( glm::vec3(-1.0, -1.0,  1.0), glm::vec2(0.0, 1.0) ),
+        // left
+        Vertex( glm::vec3(-1.0, -1.0, -1.0), glm::vec2(0.0, 0.0) ),
+        Vertex( glm::vec3(-1.0, -1.0,  1.0), glm::vec2(1.0, 0.0) ),
+        Vertex( glm::vec3(-1.0,  1.0,  1.0), glm::vec2(1.0, 1.0) ),
+        Vertex( glm::vec3(-1.0,  1.0, -1.0), glm::vec2(0.0, 1.0) ),
+        // right
+        Vertex( glm::vec3( 1.0, -1.0,  1.0), glm::vec2(0.0, 0.0) ),
+        Vertex( glm::vec3( 1.0, -1.0, -1.0), glm::vec2(1.0, 0.0) ),
+        Vertex( glm::vec3( 1.0,  1.0, -1.0), glm::vec2(1.0, 1.0) ),
+        Vertex( glm::vec3( 1.0,  1.0,  1.0), glm::vec2(0.0, 1.0) )
+    };
+    unsigned int indices[] = {
+        // front
+        0,  1,  2,
+        2,  3,  0,
+        // top
+        4,  5,  6,
+        6,  7,  4,
+        // back
+        8,  9, 10,
+        10, 11,  8,
+        // bottom
+        12, 13, 14,
+        14, 15, 12,
+        // left
+        16, 17, 18,
+        18, 19, 16,
+        // right
+        20, 21, 22,
+        22, 23, 20,
+    };
+
+    init(vertices, sizeof(vertices)/sizeof(vertices[0]), indices, sizeof(indices)/sizeof(indices[0]));
+
+}
 void Mesh::init(const IndexedMesh& indexedMesh)
 {
     m_size = indexedMesh.m_numIndices;

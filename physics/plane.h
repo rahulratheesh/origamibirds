@@ -5,10 +5,11 @@
 #include "intersect.h"
 #include "boundingsphere.h"
 
-class Plane
+class Plane : public Collider
 {
     public:
         Plane(const glm::vec3& normal, float distance) :
+            Collider(Collider::PLANE),
             m_normal(normal),
             m_distance(distance) {}
 

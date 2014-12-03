@@ -23,6 +23,7 @@ class PhysicsEngine
 
     private:
         std::vector<PhysicsObject> m_objects;
+        glm::vec3 cohesion(unsigned int i);
 };
 
 #endif // PHYSICSENGINE_H

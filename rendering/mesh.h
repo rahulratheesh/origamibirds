@@ -44,6 +44,9 @@ class Mesh
         Mesh() {}
         void init(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices);
         void init(const IndexedMesh &indexedMesh);
+        void initTriangle();
+        void initSquare();
+        void initCube();
         void draw();
 
         virtual ~Mesh();

@@ -10,7 +10,8 @@ class PhysicsObject
         PhysicsObject(glm::vec3 position, glm::vec3 velocity) :
             m_position(position),
             m_velocity(velocity),
-            m_radius(1.0f) {}
+            m_radius(1.0f),
+            m_boundingSphere(m_position, m_radius) {}
 
         void move(float delta);
 
@@ -18,7 +19,10 @@ class PhysicsObject
         inline glm::vec3 getVelocity() const { return m_velocity; }
         inline void setVelocity(glm::vec3 velocity) { m_velocity = velocity; }
 
-        BoundingSphere getBoundingSphere() const { return BoundingSphere(m_position, m_radius); }
+        Collider& getBoundingSphere() {
+            m_boundingSphere = BoundingSphere(m_position, m_radius);
+            return m_boundingSphere;
+        }
 
         virtual ~PhysicsObject() {}
 
@@ -28,6 +32,8 @@ class PhysicsObject
         glm::vec3 m_position;
         glm::vec3 m_velocity;
         float m_radius;
+
+        mutable BoundingSphere m_boundingSphere;
 
 };
 

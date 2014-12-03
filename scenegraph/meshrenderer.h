@@ -3,16 +3,16 @@
 
 #include "component.h"
 #include "../rendering/mesh.h"
-#include "../rendering/texture.h"
+#include "../rendering/material.h"
 #include "../rendering/shader.h"
 #include <glm/glm.hpp>
 
 class MeshRenderer : public Component
 {
     public:
-        MeshRenderer(const Mesh& mesh, const Texture& texture) :
+        MeshRenderer(const Mesh& mesh, const Material& material) :
             m_mesh(mesh),
-            m_texture(texture) {}
+            m_material(material) {}
 
         void input(float delta) {}
         void update(float delta) {}
@@ -20,14 +20,16 @@ class MeshRenderer : public Component
         void render(const Shader& shader, const Camera& camera)
         {
             shader.bind();
+            m_material.getTexture()->bind();
             glm::mat4 mvp = camera.getViewProjection() * getTransform()->getModel();
             shader.setUniformMatrix4f("u_transform", mvp);
+            shader.setUniformVector3f("u_color", m_material.getColor());
             m_mesh.draw();
         }
 
     private:
         Mesh m_mesh;
-        Texture m_texture;
+        Material m_material;
 
 };
 

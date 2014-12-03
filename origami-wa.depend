@@ -173,13 +173,13 @@
 1415630709 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/input.cpp
 	"input.h"
 
-1416737573 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/main.cpp
+1417572780 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/main.cpp
 	<GL/glew.h>
 	<GL/glut.h>
 	<iostream>
 	"rendering/window.h"
 	"core/coreengine.h"
-	"scene01.h"
+	"scene02.h"
 	"rendering/renderingengine.h"
 
 1415780635 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/mesh.cpp
@@ -403,9 +403,9 @@
 	<glm/gtx/transform.hpp>
 	<iostream>
 
-1416768040 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/timer.h
+1417058792 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/timer.h
 
-1416768429 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/coreengine.cpp
+1417058641 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/coreengine.cpp
 	"coreengine.h"
 	"timer.h"
 
@@ -417,7 +417,7 @@
 1415630709 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/input.cpp
 	"input.h"
 
-1416768075 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/timer.cpp
+1417058795 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/timer.cpp
 	"timer.h"
 	<GL/glew.h>
 	<GL/glut.h>
@@ -436,7 +436,7 @@
 	"../scenegraph/node.h"
 	"../core/input.h"
 
-1415777355 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/mesh.h
+1417575576 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/mesh.h
 	<GL/glew.h>
 	<glm/glm.hpp>
 	<iostream>
@@ -459,20 +459,20 @@
 	<glm/gtc/matrix_transform.hpp>
 	"../core/input.h"
 
-1416721691 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/texture.h
+1417040973 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/texture.h
 	<string>
 	<GL/glew.h>
 
 1416839827 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/camera.cpp
 	"camera.h"
 
-1415780635 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/mesh.cpp
+1417590680 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/mesh.cpp
 	"mesh.h"
 	<iostream>
 	<fstream>
 	<sstream>
 
-1416891272 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/renderingengine.cpp
+1417573945 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/renderingengine.cpp
 	"renderingengine.h"
 
 1416721924 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/shader.cpp
@@ -486,7 +486,7 @@
 	<SOIL/SOIL.h>
 	<cassert>
 
-1416680582 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/window.cpp
+1417039319 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/window.cpp
 	"window.h"
 	<GL/glew.h>
 	<GL/glut.h>
@@ -495,42 +495,44 @@
 1416594752 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/boundingbox.cpp
 	"boundingbox.h"
 
-1416679412 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/boundingbox.h
+1417530764 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/boundingbox.h
 	<glm/glm.hpp>
 	"intersect.h"
+	"collider.h"
 
 1416594775 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/intersect.h
 
 1416594764 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/boundingsphere.cpp
 	"boundingsphere.h"
 
-1416594758 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/boundingsphere.h
+1417530743 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/boundingsphere.h
 	<glm/glm.hpp>
 	"intersect.h"
+	"collider.h"
 
 1416594781 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/intersect.cpp
 
-1416893944 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/physicsengine.cpp
+1417583840 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/physicsengine.cpp
 	"physicsengine.h"
 	"intersect.h"
 
-1416893859 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/physicsengine.h
+1417583820 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/physicsengine.h
 	<vector>
 	"physicsobject.h"
 	<iostream>
 
-1416892985 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/physicsobject.h
+1417583569 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/physicsobject.h
 	<glm/glm.hpp>
 	"boundingsphere.h"
 
-1416839218 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/physicsobject.cpp
+1417583566 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/physicsobject.cpp
 	"physicsobject.h"
 	<iostream>
 
 1416595144 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/plane.cpp
 	"plane.h"
 
-1416595079 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/plane.h
+1417530825 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/plane.h
 	<glm/glm.hpp>
 	"intersect.h"
 	"boundingsphere.h"
@@ -555,19 +557,20 @@
 	"../rendering/shader.h"
 	<glm/glm.hpp>
 
-1416900115 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene01.cpp
+1417062111 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene01.cpp
 	"scene01.h"
 	"scenegraph/meshrenderer.h"
 	"scenegraph/physicsenginecomponent.h"
 	"scenegraph/physicsobjectcomponent.h"
+	"core/timer.h"
 
-1416738784 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene01.h
+1417050647 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene01.h
 	"core/scene.h"
 
 1416766143 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/scene.cpp
 	"scene.h"
 
-1416900094 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/scene.h
+1417051348 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/core/scene.h
 	"../rendering/renderingengine.h"
 	"../scenegraph/node.h"
 
@@ -598,8 +601,9 @@
 	"node.h"
 	<iostream>
 
-1416893118 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scenegraph/physicsenginecomponent.cpp
+1417582720 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scenegraph/physicsenginecomponent.cpp
 	"physicsenginecomponent.h"
+	"../core/timer.h"
 
 1416899992 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scenegraph/physicsenginecomponent.h
 	"component.h"
@@ -612,10 +616,37 @@
 	"component.h"
 	"../physics/physicsobject.h"
 
-1416834430 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scenegraph/meshrenderer.h
+1417044383 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scenegraph/meshrenderer.h
 	"component.h"
 	"../rendering/mesh.h"
-	"../rendering/texture.h"
+	"../rendering/material.h"
 	"../rendering/shader.h"
 	<glm/glm.hpp>
+
+1417042637 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/material.cpp
+	"material.h"
+
+1417044255 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/rendering/material.h
+	"texture.h"
+	<glm/glm.hpp>
+
+1417530810 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/collider.h
+	"intersect.h"
+	<glm/glm.hpp>
+
+1417530842 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/physics/collider.cpp
+	"collider.h"
+	"boundingsphere.h"
+	"boundingbox.h"
+	"plane.h"
+	<iostream>
+
+1417572665 /home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene02.h
+	"core/scene.h"
+
+1417590730 source:/home/rahul/Documents/SEM3/GRPH/majorproject/origami-05/scene02.cpp
+	"scene02.h"
+	"scenegraph/meshrenderer.h"
+	"scenegraph/physicsenginecomponent.h"
+	"scenegraph/physicsobjectcomponent.h"
 

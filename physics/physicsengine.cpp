@@ -6,12 +6,36 @@ void PhysicsEngine::addObject(const PhysicsObject& physicsObject)
     m_objects.push_back(physicsObject);
 }
 
+// simulates Boyd's flocking bird algorithm
 void PhysicsEngine::simulate(float delta)
 {
     for (unsigned int i = 0; i < m_objects.size(); i++)
     {
+        //m_objects[i].setVelocity(m_objects[i].getVelocity() + cohesion(i));
         m_objects[i].move(delta);
     }
+}
+
+glm::vec3 PhysicsEngine::cohesion(unsigned int i)
+{
+    glm::vec3 force = glm::vec3(0);
+    glm::vec3 centreOfMass = glm::vec3(0);
+    int neighbours = 0;
+    for (unsigned int j = 0; j < m_objects.size(); j++)
+    {
+        if (j != i)
+        {
+            centreOfMass += m_objects[j].getPosition();
+            neighbours++;
+        }
+    }
+    if (neighbours > 0)
+    {
+        centreOfMass /= neighbours;
+        force = centreOfMass - m_objects[i].getPosition();
+        force = glm::normalize(force);
+    }
+    return force;
 }
 
 void PhysicsEngine::handleCollision()

@@ -9,6 +9,7 @@ class Scene01 : public Scene
         Scene01() {}
 
         void init();
+        void update(float delta);
 
         virtual ~Scene01() {}
 };

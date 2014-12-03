@@ -9,7 +9,7 @@ class Texture {
     public:
         Texture(const string& file_name);
         virtual ~Texture();
-        void bind(unsigned int texture_id);
+        void bind(unsigned int texture_id = 0);
 
     protected:
 

@@ -11,7 +11,7 @@ class Scene
 
         virtual void init();
         void input(float delta);
-        void update(float delta);
+        virtual void update(float delta);
         void render(RenderingEngine* renderingEngine);
 
         inline Node getRootNode() const { return m_root; }

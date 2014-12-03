@@ -3,11 +3,15 @@
 
 #include <glm/glm.hpp>
 #include "intersect.h"
+#include "collider.h"
 
-class BoundingSphere
+class BoundingSphere : public Collider
 {
     public:
-        BoundingSphere(glm::vec3 center, float radius) : m_center(center), m_radius(radius) {}
+        BoundingSphere(glm::vec3 center, float radius) :
+            Collider(Collider::SPHERE),
+            m_center(center),
+            m_radius(radius) {}
 
         Intersect getIntersection(const BoundingSphere& other);
 

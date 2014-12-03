@@ -1,4 +1,5 @@
 #include "physicsenginecomponent.h"
+#include "../core/timer.h"
 
 void PhysicsEngineComponent::update(float delta)
 {

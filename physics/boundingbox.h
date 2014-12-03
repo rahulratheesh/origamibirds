@@ -3,11 +3,13 @@
 
 #include <glm/glm.hpp>
 #include "intersect.h"
+#include "collider.h"
 
-class BoundingBox
+class BoundingBox : public Collider
 {
     public:
         BoundingBox(glm::vec3 minExtent, glm::vec3 maxExtent) :
+            Collider(Collider::BOX),
             m_minExtent(minExtent),
             m_maxExtent(maxExtent) {}
 

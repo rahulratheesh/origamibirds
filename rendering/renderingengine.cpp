@@ -6,13 +6,14 @@ RenderingEngine::RenderingEngine(Window& window)
     m_mainCamera = new  Camera(70.0, m_window->getAspectRatio(), 0.1f, 100.0f);
     m_basicShader = new Shader();
     m_basicShader->addUniform("u_transform");
+    m_basicShader->addUniform("u_color");
 
     glFrontFace(GL_CCW);
     glCullFace(GL_BACK);
-    //glEnable(GL_CULL_FACE);
+    glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_DEPTH_CLAMP);
-    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    glClearColor(0.62f, 0.74f, 0.9f, 1.0f);
 }
 
 void RenderingEngine::render(Node& node)

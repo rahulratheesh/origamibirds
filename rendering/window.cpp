@@ -8,6 +8,7 @@ void keyboardDownWrapper(unsigned char key, int x, int y);
 void keyboardUpWrapper(unsigned char key, int x, int y);
 void runWrapper();
 void mouseMotionWrapper(int x, int y);
+void mouseClickedWrapper(int button, int state, int x, int y);
 Input* inputWrapper = NULL;
 Window* windowWrapper = NULL;
 
@@ -37,7 +38,8 @@ Window::Window(int argc, char* argv[], int width, int height, const std::string&
     glutKeyboardFunc( keyboardDownWrapper );
     glutKeyboardUpFunc( keyboardUpWrapper );
     glutIgnoreKeyRepeat(1);
-    glutPassiveMotionFunc( mouseMotionWrapper );
+    glutMouseFunc( mouseClickedWrapper );
+    //glutPassiveMotionFunc( mouseMotionWrapper );
 
 }
 
@@ -73,7 +75,14 @@ void keyboardUpWrapper(unsigned char key, int x, int y)
 
 void mouseMotionWrapper(int x, int y)
 {
-    inputWrapper->setMousePosition( x, y ) ;
+    //inputWrapper->setMousePosition( x, y ) ;
+}
+
+void mouseClickedWrapper(int button, int state, int x, int y)
+{
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+        inputWrapper->setMousePosition(x, y);
+    }
 }
 
 Window::~Window()
