@@ -11,6 +11,7 @@ class PhysicsEngine
         PhysicsEngine() {}
 
         void addObject(const PhysicsObject& physicsObject);
+        // simulates Boid's flocking bird algorithm
         void simulate(float delta);
         void handleCollision();
 
@@ -24,6 +25,8 @@ class PhysicsEngine
     private:
         std::vector<PhysicsObject> m_objects;
         glm::vec3 cohesion(unsigned int i);
+        glm::vec3 separation(unsigned int i);
+        glm::vec3 alignment(unsigned int i);
 };
 
 #endif // PHYSICSENGINE_H
