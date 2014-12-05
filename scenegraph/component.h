@@ -4,6 +4,8 @@
 #include "node.h"
 #include <iostream>
 
+class CoreEngine;
+
 class Component
 {
     public:
@@ -14,6 +16,8 @@ class Component
         inline Transform* getTransform() { return m_parent->getTransform(); }
 
         void setParent(Node* parent) { m_parent = parent; }
+
+        virtual void addToEngine(CoreEngine* engine) { }
 
     private:
         Node* m_parent;

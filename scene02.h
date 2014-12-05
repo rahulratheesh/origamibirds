@@ -8,7 +8,7 @@ class Scene02 : public Scene
     public:
         Scene02() {}
 
-        void init();
+        void init(const Window& window);
         void update(float delta);
 
         virtual ~Scene02() {}

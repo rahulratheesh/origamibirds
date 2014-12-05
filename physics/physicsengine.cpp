@@ -25,7 +25,7 @@ void PhysicsEngine::input(const Input& input)
     // update velocity
     for (unsigned int i = 0; i < m_objects.size(); i++)
     {
-        m_objects[i].setVelocity( 0.1f * (m_objects[i].getVelocity() + force) );
+        m_objects[i].setVelocity( 0.2f * (m_objects[i].getVelocity() + force) );
     }
 
 }
@@ -43,9 +43,6 @@ void PhysicsEngine::simulate(float delta)
 
         m_objects[i].move(delta);
     }
-//    std::cout << m_objects[0].getVelocity().x << ", "
-//              << m_objects[0].getVelocity().y << ", "
-//              << m_objects[0].getVelocity().z << std::endl;
 }
 
 glm::vec3 PhysicsEngine::cohesion(unsigned int i)

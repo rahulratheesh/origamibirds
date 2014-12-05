@@ -1,7 +1,7 @@
 #include "scene.h"
 
 
-void Scene::init()
+void Scene::init(const Window& window)
 {
 }
 

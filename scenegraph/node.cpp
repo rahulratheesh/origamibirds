@@ -42,10 +42,29 @@ void Node::addChild(Node* child)
 {
     m_children.push_back(child);
     child->getTransform()->setParent(&m_transform);
+    child->setEngine(m_coreEngine);
 }
 
 void Node::addComponent(Component* component)
 {
     m_components.push_back(component);
     component->setParent(this);
+}
+
+void Node::setEngine(CoreEngine* engine)
+{
+	if(m_coreEngine != engine)
+	{
+		m_coreEngine = engine;
+
+		for(unsigned int i = 0; i < m_components.size(); i++)
+		{
+			m_components[i]->addToEngine(engine);
+		}
+
+		for(unsigned int i = 0; i < m_children.size(); i++)
+		{
+			m_children[i]->setEngine(engine);
+		}
+	}
 }

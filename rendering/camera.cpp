@@ -44,34 +44,6 @@ void Camera::moveUp()
     m_position -= MOVEMENT_SPEED * m_up;
 }
 
-void Camera::setInput(const Input& input)
-{
-    if (input.getKey((int)'w'))
-    {
-        moveForward();
-    }
-    if (input.getKey((int)'a'))
-    {
-        lookLeft();
-    }
-    if (input.getKey((int)'s'))
-    {
-        moveBackward();
-    }
-    if (input.getKey((int)'d'))
-    {
-        lookRight();
-    }
-    if (input.getKey((int)'q'))
-    {
-        moveDown();
-    }
-    if (input.getKey((int)'e'))
-    {
-        moveUp();
-    }
-}
-
 
 
 

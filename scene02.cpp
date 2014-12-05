@@ -3,9 +3,12 @@
 #include "scenegraph/meshrenderer.h"
 #include "scenegraph/physicsenginecomponent.h"
 #include "scenegraph/physicsobjectcomponent.h"
+#include "scenegraph/cameracomponent.h"
 
-void Scene02::init()
+void Scene02::init(const Window& window)
 {
+    Camera camera(50.0f, window.getAspectRatio(), 0.1f, 1000.0f);
+    CameraComponent* cameraComponent = new CameraComponent(camera);
 
     PhysicsEngine physicsEngine;
     PhysicsObject physicsObject1(glm::vec3(-1.0, 0.5, -5.0), glm::vec3(0.1f, 0.1f, 0.0f));
@@ -65,6 +68,7 @@ void Scene02::init()
     Node* birdNode1 = new Node(glm::vec3(-1.0, 0.5, -5.0), glm::vec3(0.0f, 90.0f, 0.0f), glm::vec3(0.5f, 0.5f, 0.5f));
     birdNode1->addComponent(new MeshRenderer(paperPlaneMesh, *yellowPaper));
     birdNode1->addComponent(new PhysicsObjectComponent(&physicsEngineComponent->getPhysicsEngine().getObject(0)));
+    birdNode1->addComponent(cameraComponent);
     addToScene(birdNode1);
 
     Material* orangePaper = new Material( new Texture("textures/paper.jpg") , glm::vec3(0.93, 0.67, 0.09));

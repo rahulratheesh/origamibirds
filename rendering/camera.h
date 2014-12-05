@@ -43,8 +43,6 @@ class Camera {
 
         void update();
 
-        void setInput(const Input& input);
-
         virtual ~Camera() {}
 
     protected:

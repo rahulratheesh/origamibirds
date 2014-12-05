@@ -15,10 +15,11 @@ class RenderingEngine
         RenderingEngine(Window& window);
 
         void render(Node& node);
-        void input(const Input& input);
 
         inline Window* getWindow() const { return m_window; }
         inline Camera* getCamera() const { return m_mainCamera; }
+
+        inline void setCamera(Camera& camera) { m_mainCamera = &camera; }
         virtual ~RenderingEngine() {}
 
     protected:

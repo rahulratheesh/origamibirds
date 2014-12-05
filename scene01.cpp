@@ -6,7 +6,7 @@
 
 Node* cubeNode2;
 
-void Scene01::init()
+void Scene01::init(const Window& window)
 {
     PhysicsEngine physicsEngine;
 

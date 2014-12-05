@@ -15,6 +15,7 @@ class CoreEngine
         void run();
         void render();
 
+        inline RenderingEngine* getRenderingEngine() { return m_renderingEngine; }
         virtual ~CoreEngine() {}
     protected:
 

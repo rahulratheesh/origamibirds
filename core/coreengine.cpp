@@ -10,13 +10,14 @@ CoreEngine::CoreEngine(Scene* scene, RenderingEngine* renderingEngine)
     m_renderingEngine = renderingEngine;
     m_isRunning = false;
     m_frameTime = 1/60.0;
+    m_scene->setEngine(this);
 }
 
 void CoreEngine::start()
 {
     if (m_isRunning) return;
 
-    m_scene->init();
+    m_scene->init( *m_renderingEngine->getWindow() );
 
     coreEngineWrapper = this;
     glutIdleFunc( runWrapper );
@@ -38,7 +39,6 @@ void CoreEngine::run()
     {
         startRender = true;
         m_scene->input( m_renderingEngine->getWindow()->getInput() );
-        m_renderingEngine->input( m_renderingEngine->getWindow()->getInput() );
         m_scene->update(m_frameTime);
     }
 
