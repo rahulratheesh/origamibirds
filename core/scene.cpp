@@ -5,9 +5,9 @@ void Scene::init()
 {
 }
 
-void Scene::input(float delta)
+void Scene::input(const Input& input)
 {
-    m_root.input(delta);
+    m_root.input(input);
 }
 
 void Scene::update(float delta)

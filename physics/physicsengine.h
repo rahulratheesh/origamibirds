@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "physicsobject.h"
+#include "../core/input.h"
 #include <iostream>
 
 class PhysicsEngine
@@ -11,9 +12,9 @@ class PhysicsEngine
         PhysicsEngine() {}
 
         void addObject(const PhysicsObject& physicsObject);
-        // simulates Boid's flocking bird algorithm
         void simulate(float delta);
         void handleCollision();
+        void input(const Input& input);
 
         inline const PhysicsObject& getObject(unsigned int index) const { return m_objects[index]; }
         inline unsigned int getNumObjects() const { return m_objects.size(); }

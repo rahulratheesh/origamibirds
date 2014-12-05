@@ -16,13 +16,16 @@ class Input
         inline bool getKey(int keyCode) const { return m_keys[keyCode]; }
         inline bool getDownKey(int keyCode) const { return m_downKeys[keyCode]; }
         inline bool getUpKey(int keyCode) const { return m_upKeys[keyCode]; }
-        inline glm::vec2 getMousePosition() const { return m_mousePosition; }
+        inline glm::vec2 getMouseCoord() const { return m_mouseCoord; }
+        inline glm::vec3 getObjCoord() const { return m_objCoord; }
+        inline bool getClick() const { return m_click; }
 
         inline void setKey(int keyCode, bool value)  { m_keys[keyCode] = value; }
         inline void setDownKey(int keyCode, bool value) { m_downKeys[keyCode] = value; }
         inline void setUpKey(int keyCode, bool value) { m_upKeys[keyCode] = value; }
-        inline void setMousePosition(int x, int y) { m_mousePosition = glm::vec2(x, y); }
-
+        inline void setMouseCoord(int x, int y) { m_mouseCoord = glm::vec2(x, y); m_click = true; }
+        inline void setObjCoord(const glm::vec3& objCoord) { m_objCoord = objCoord; m_click = true; }
+        inline void setClick(bool click) { m_click = click; }
 
         virtual ~Input();
 
@@ -35,7 +38,9 @@ class Input
         bool m_keys[NUM_KEYS];
         bool m_downKeys[NUM_KEYS];
         bool m_upKeys[NUM_KEYS];
-        glm::vec2 m_mousePosition;
+        glm::vec2 m_mouseCoord;
+        glm::vec3 m_objCoord;
+        bool m_click;
 };
 
 #endif // INPUT_H

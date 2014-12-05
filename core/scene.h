@@ -10,7 +10,7 @@ class Scene
         Scene() {}
 
         virtual void init();
-        void input(float delta);
+        void input(const Input& input);
         virtual void update(float delta);
         void render(RenderingEngine* renderingEngine);
 

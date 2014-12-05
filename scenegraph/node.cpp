@@ -2,15 +2,15 @@
 #include "component.h"
 #include <iostream>
 
-void Node::input(float delta)
+void Node::input(const Input& input)
 {
     for (unsigned int i = 0; i < m_components.size(); i++)
     {
-        m_components[i]->input(delta);
+        m_components[i]->input(input);
     }
     for (unsigned int i = 0; i < m_children.size(); i++)
     {
-        m_children[i]->input(delta);
+        m_children[i]->input(input);
     }
 }
 

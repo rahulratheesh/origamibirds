@@ -1,5 +1,10 @@
 #include "physicsenginecomponent.h"
-#include "../core/timer.h"
+#include "../core/input.h"
+
+void PhysicsEngineComponent::input(const Input& input)
+{
+    m_physicsEngine.input(input);
+}
 
 void PhysicsEngineComponent::update(float delta)
 {

@@ -37,7 +37,7 @@ void CoreEngine::run()
     if (m_isRunning)
     {
         startRender = true;
-        m_scene->input(m_frameTime);
+        m_scene->input( m_renderingEngine->getWindow()->getInput() );
         m_renderingEngine->input( m_renderingEngine->getWindow()->getInput() );
         m_scene->update(m_frameTime);
     }

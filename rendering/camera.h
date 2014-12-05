@@ -22,9 +22,13 @@ class Camera {
         inline glm::vec3& getDirection() { return m_direction; }
         inline glm::vec3& getUp() { return m_up; }
 
+        inline glm::mat4 getView() { return glm::lookAt(m_position, m_position + m_direction, m_up); }
+        inline glm::mat4 getProjection() { return m_perspective; }
+
         inline void setPositon(const glm::vec3& position) { m_position = position; }
         inline void setDirection(const glm::vec3& direction) { m_direction = direction; }
         inline void setUp(const glm::vec3& up) { m_up = up; }
+
 
         inline glm::mat4 getViewProjection() const {
             return m_perspective * glm::lookAt(m_position, m_position + m_direction, m_up);

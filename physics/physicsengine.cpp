@@ -6,18 +6,46 @@ void PhysicsEngine::addObject(const PhysicsObject& physicsObject)
     m_objects.push_back(physicsObject);
 }
 
-// simulates Boyd's flocking bird algorithm
+void PhysicsEngine::input(const Input& input)
+{
+    // leader's position
+    glm::vec2 p1;
+    p1.x = m_objects[0].getPosition().x;
+    p1.y = m_objects[0].getPosition().y;
+
+    // mouse position
+    glm::vec2 p2;
+    p2.x = input.getObjCoord().x;
+    p2.y = input.getObjCoord().y;
+
+    // new force component
+    glm::vec2 f = p2 - p1;
+    glm::vec3 force = glm::normalize(glm::vec3(f.x, f.y, 0.0f));
+
+    // update velocity
+    for (unsigned int i = 0; i < m_objects.size(); i++)
+    {
+        m_objects[i].setVelocity( 0.1f * (m_objects[i].getVelocity() + force) );
+    }
+
+}
+
+
 void PhysicsEngine::simulate(float delta)
 {
     for (unsigned int i = 0; i < m_objects.size(); i++)
     {
-        m_objects[i].setVelocity( 0.01f * m_objects[i].getVelocity() );
+        // simulates Boyd's flocking bird algorithm
+        m_objects[i].setVelocity( 0.75f * m_objects[i].getVelocity() );
         m_objects[i].setVelocity( m_objects[i].getVelocity() += cohesion(i) );
         m_objects[i].setVelocity( m_objects[i].getVelocity() += separation(i) );
-        m_objects[i].setVelocity( m_objects[i].getVelocity() += alignment(i) );
+        m_objects[i].setVelocity( m_objects[i].getVelocity() += (0.1f * alignment(i)) );
 
         m_objects[i].move(delta);
     }
+//    std::cout << m_objects[0].getVelocity().x << ", "
+//              << m_objects[0].getVelocity().y << ", "
+//              << m_objects[0].getVelocity().z << std::endl;
 }
 
 glm::vec3 PhysicsEngine::cohesion(unsigned int i)
@@ -45,7 +73,7 @@ glm::vec3 PhysicsEngine::cohesion(unsigned int i)
 glm::vec3 PhysicsEngine::separation(unsigned int i)
 {
     glm::vec3 force = glm::vec3(0);
-    float separationDistance = 2.0f;
+    float separationDistance = 1.25f;
     for (unsigned int j = 0; j < m_objects.size(); j++)
     {
         if (j != i)
@@ -58,6 +86,7 @@ glm::vec3 PhysicsEngine::separation(unsigned int i)
             }
         }
     }
+
     return force;
 }
 

@@ -14,7 +14,7 @@ class MeshRenderer : public Component
             m_mesh(mesh),
             m_material(material) {}
 
-        void input(float delta) {}
+        void input(const Input& input) {}
         void update(float delta) {}
 
         void render(const Shader& shader, const Camera& camera)

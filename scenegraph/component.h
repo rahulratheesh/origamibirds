@@ -7,7 +7,7 @@
 class Component
 {
     public:
-        virtual void input(float delta) {}
+        virtual void input(const Input& input) {}
         virtual void update(float delta) {}
         virtual void render(const Shader& shader, const Camera& camera) {}
 

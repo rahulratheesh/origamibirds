@@ -3,6 +3,7 @@
 RenderingEngine::RenderingEngine(Window& window)
 {
     m_window = &window;
+    m_window->setRenderingEngine(this);
     m_mainCamera = new  Camera(50.0f, m_window->getAspectRatio(), 0.1f, 1000.0f);
     m_basicShader = new Shader();
     m_basicShader->addUniform("u_transform");

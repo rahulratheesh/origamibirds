@@ -11,6 +11,7 @@ class PhysicsEngineComponent : public Component
             m_physicsEngine(physicsEngine)
         {}
 
+        void input(const Input& input);
         void update(float delta);
 
         inline const PhysicsEngine& getPhysicsEngine() const { return m_physicsEngine; }

@@ -8,6 +8,7 @@ Input::Input()
         setDownKey(i, false);
         setUpKey(i, false);
     }
+    m_click = false;
 }
 
 Input::~Input()

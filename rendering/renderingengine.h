@@ -18,6 +18,7 @@ class RenderingEngine
         void input(const Input& input);
 
         inline Window* getWindow() const { return m_window; }
+        inline Camera* getCamera() const { return m_mainCamera; }
         virtual ~RenderingEngine() {}
 
     protected:
