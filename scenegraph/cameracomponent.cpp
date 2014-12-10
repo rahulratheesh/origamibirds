@@ -31,7 +31,10 @@ void CameraComponent::input(const Input& input)
 
 void CameraComponent::update(float delta)
 {
-    m_camera.setDirection( getTransform()->getTranslate() );
+    glm::vec3 currCameraPos = m_camera.getPosiiton();
+    glm::vec3 pos = getTransform()->getTranslate();
+    currCameraPos.x = pos.x;
+    m_camera.setPositon(currCameraPos);
 }
 
 void CameraComponent::addToEngine(CoreEngine* coreEngine)

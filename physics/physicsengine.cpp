@@ -25,7 +25,7 @@ void PhysicsEngine::input(const Input& input)
     // update velocity
     for (unsigned int i = 0; i < m_objects.size(); i++)
     {
-        m_objects[i].setVelocity( 0.2f * (m_objects[i].getVelocity() + force) );
+        m_objects[i].setVelocity( 0.3f * (m_objects[i].getVelocity() + force) );
     }
 
 }
@@ -35,8 +35,11 @@ void PhysicsEngine::simulate(float delta)
 {
     for (unsigned int i = 0; i < m_objects.size(); i++)
     {
+        if (!m_objects[i].getIsBoid())
+            return;
+
         // simulates Boyd's flocking bird algorithm
-        m_objects[i].setVelocity( 0.75f * m_objects[i].getVelocity() );
+        m_objects[i].setVelocity( 0.4f * m_objects[i].getVelocity() );
         m_objects[i].setVelocity( m_objects[i].getVelocity() += cohesion(i) );
         m_objects[i].setVelocity( m_objects[i].getVelocity() += separation(i) );
         m_objects[i].setVelocity( m_objects[i].getVelocity() += (0.1f * alignment(i)) );
@@ -70,7 +73,7 @@ glm::vec3 PhysicsEngine::cohesion(unsigned int i)
 glm::vec3 PhysicsEngine::separation(unsigned int i)
 {
     glm::vec3 force = glm::vec3(0);
-    float separationDistance = 1.25f;
+    float separationDistance = 0.5f;
     for (unsigned int j = 0; j < m_objects.size(); j++)
     {
         if (j != i)
@@ -113,7 +116,7 @@ void PhysicsEngine::handleCollision()
     {
         for (unsigned int j = i+1; j < m_objects.size(); j++)
         {
-            Intersect intersect = m_objects[i].getBoundingSphere().getIntersection(m_objects[j].getBoundingSphere());
+            Intersect intersect = m_objects[i].getCollider().getIntersection(m_objects[j].getCollider());
             if (intersect.getDoesIntersect())
             {
                 m_objects[i].setVelocity( -1.0f * m_objects[i].getVelocity() );

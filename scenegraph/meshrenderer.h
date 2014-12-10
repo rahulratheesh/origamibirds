@@ -21,9 +21,15 @@ class MeshRenderer : public Component
         {
             shader.bind();
             m_material.getTexture()->bind();
-            glm::mat4 mvp = camera.getViewProjection() * getTransform()->getModel();
+            glm::mat4 m = getTransform()->getModel();
+            glm::mat4 mvp = camera.getViewProjection() * m;
             shader.setUniformMatrix4f("u_transform", mvp);
+            shader.setUniformMatrix4f("u_normal_transform", glm::transpose(glm::inverse(m)));
             shader.setUniformVector3f("u_color", m_material.getColor());
+
+            shader.setUniformVector3f("u_ambient", glm::vec3(1.0, 1.0, 1.0));
+            shader.setUniformDirectionalLight("u_directionalLight",
+                                              *new DirectionalLight(*new BaseLight(glm::vec3(1.0f, 1.0f, 1.0f), 0.25f), glm::vec3(1.0f, 1.0f, 1.0f))) ;
             m_mesh.draw();
         }
 

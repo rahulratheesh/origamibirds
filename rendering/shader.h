@@ -5,6 +5,7 @@
 #include <GL/glew.h>
 #include "../core/transform.h"
 #include "camera.h"
+#include "light.h"
 #include <iostream>
 #include <vector>
 #include <map>
@@ -23,6 +24,7 @@ class Shader {
         void setUniformf(const std::string& uniformName, float value) const;
         void setUniformVector3f(const std::string& uniformName, const glm::vec3& value) const;
         void setUniformMatrix4f(const std::string& uniformName, const glm::mat4& value) const;
+        void setUniformDirectionalLight(const std::string& uniformName, const DirectionalLight& value) const;
 
         virtual ~Shader();
 

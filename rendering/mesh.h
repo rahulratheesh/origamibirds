@@ -30,9 +30,11 @@ class IndexedMesh
     public:
         IndexedMesh() {}
         IndexedMesh(const std::string& fileName);
+        void calcNormals();
 
         std::vector<glm::vec3> m_posCoords;
         std::vector<glm::vec2> m_texCoords;
+        std::vector<glm::vec3> m_norCoords;
         std::vector<unsigned int> m_indices;
         unsigned int m_numVertices;
         unsigned int m_numIndices;
@@ -44,6 +46,7 @@ class Mesh
         Mesh() {}
         void init(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices);
         void init(const IndexedMesh &indexedMesh);
+
         void initTriangle();
         void initSquare();
         void initCube();
@@ -54,11 +57,13 @@ class Mesh
 
     private:
 
-       enum {POSCOORD_VB, TEXCOORD_VB, NUM_BUFFERS};
+       enum {POSCOORD_VB, TEXCOORD_VB, NORCOORD_VB, NUM_BUFFERS};
         GLuint m_vertex_array_object;
         GLuint m_vertex_buffer_objects[NUM_BUFFERS];
         GLuint m_index_buffer_object;
         unsigned int m_size;
+
+
 };
 
 #endif // MESH_H

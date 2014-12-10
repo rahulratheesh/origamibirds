@@ -14,7 +14,6 @@ class Collider
 
         Intersect getIntersection(const Collider& other);
 
-        // to be overriden by subclasses
         virtual void transform(const glm::vec3& translation) {}
         virtual glm::vec3 getCenter() const { return glm::vec3(0.0f, 0.0f, 0.0f); }
 

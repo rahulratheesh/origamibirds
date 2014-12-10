@@ -14,6 +14,7 @@ class BoundingSphere : public Collider
             m_radius(radius) {}
 
         Intersect getIntersection(const BoundingSphere& other);
+        void transform(const glm::vec3& translate);
 
         inline glm::vec3 getCenter() const { return m_center; }
         inline float getRadius() const { return m_radius; }

@@ -66,6 +66,8 @@
 		<Unit filename="physics/plane.h" />
 		<Unit filename="rendering/camera.cpp" />
 		<Unit filename="rendering/camera.h" />
+		<Unit filename="rendering/light.cpp" />
+		<Unit filename="rendering/light.h" />
 		<Unit filename="rendering/material.cpp" />
 		<Unit filename="rendering/material.h" />
 		<Unit filename="rendering/mesh.cpp" />
@@ -82,6 +84,8 @@
 		<Unit filename="scene01.h" />
 		<Unit filename="scene02.cpp" />
 		<Unit filename="scene02.h" />
+		<Unit filename="scenegraph/cameracomponent.cpp" />
+		<Unit filename="scenegraph/cameracomponent.h" />
 		<Unit filename="scenegraph/component.h" />
 		<Unit filename="scenegraph/meshrenderer.h" />
 		<Unit filename="scenegraph/node.cpp" />
@@ -92,6 +96,8 @@
 		<Unit filename="scenegraph/physicsobjectcomponent.h" />
 		<Unit filename="shaders/basic.fs.glsl" />
 		<Unit filename="shaders/basic.vs.glsl" />
+		<Unit filename="shaders/phong.fs.glsl" />
+		<Unit filename="shaders/phong.vs.glsl" />
 		<Unit filename="textures/grass.jpg" />
 		<Unit filename="textures/lawn.jpg" />
 		<Unit filename="textures/paper.jpg" />

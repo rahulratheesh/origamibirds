@@ -4,18 +4,19 @@
 #include "scenegraph/physicsenginecomponent.h"
 #include "scenegraph/physicsobjectcomponent.h"
 #include "scenegraph/cameracomponent.h"
+#include "physics/boundingsphere.h"
 
 void Scene02::init(const Window& window)
 {
-    Camera camera(50.0f, window.getAspectRatio(), 0.1f, 1000.0f);
+    Camera camera(50.0f, window.getAspectRatio(), 0.1f, 100.0f);
     CameraComponent* cameraComponent = new CameraComponent(camera);
 
     PhysicsEngine physicsEngine;
-    PhysicsObject physicsObject1(glm::vec3(-1.0, 0.5, -5.0), glm::vec3(0.1f, 0.1f, 0.0f));
-    PhysicsObject physicsObject2(glm::vec3(-2.0, 0.5, -5.0), glm::vec3(0.1f, 0.1f, 0.0f));
-    PhysicsObject physicsObject3(glm::vec3(-3.0, 0.5, -5.0), glm::vec3(0.1f, 0.1f, 0.0f));
-    PhysicsObject physicsObject4(glm::vec3(-4.0, 0.5, -5.0), glm::vec3(0.1f, 0.1f, 0.0f));
-    PhysicsObject physicsObject5(glm::vec3(-5.0, 0.5, -5.0), glm::vec3(0.1f, 0.1f, 0.0f));
+    PhysicsObject physicsObject1(new BoundingSphere(glm::vec3(-1.0, 0.5, -5.0), 0.2f), glm::vec3(0.1f, 0.1f, 0.0f), true);
+    PhysicsObject physicsObject2(new BoundingSphere(glm::vec3(-2.0, 0.5, -5.0), 0.2f), glm::vec3(0.1f, 0.1f, 0.0f), true);
+    PhysicsObject physicsObject3(new BoundingSphere(glm::vec3(-3.0, 0.5, -5.0), 0.2f), glm::vec3(0.1f, 0.1f, 0.0f), true);
+    PhysicsObject physicsObject4(new BoundingSphere(glm::vec3(-4.0, 0.5, -5.0), 0.2f), glm::vec3(0.1f, 0.1f, 0.0f), true);
+    PhysicsObject physicsObject5(new BoundingSphere(glm::vec3(-5.0, 0.5, -5.0), 0.2f), glm::vec3(0.1f, 0.1f, 0.0f), true);
     physicsEngine.addObject(physicsObject1);
     physicsEngine.addObject(physicsObject2);
     physicsEngine.addObject(physicsObject3);
@@ -40,22 +41,26 @@ void Scene02::init(const Window& window)
     floorNode->addComponent(new MeshRenderer(floorMesh, *floor));
     addToScene(floorNode);
 
-    Material* bg = new Material( new Texture("textures/bg.jpg") , glm::vec3(1.0, 1.0, 1.0));
-    Node* bgNode = new Node(glm::vec3(0.0, 0.0, -10.0), glm::vec3(90.0f, 0.0f, 0.0f), glm::vec3(50.0f, 1.0f, 10.0f));
-    bgNode->addComponent(new MeshRenderer(floorMesh, *bg));
-    addToScene(bgNode);
+//    Material* bg = new Material( new Texture("textures/bg.jpg") , glm::vec3(1.0, 1.0, 1.0));
+//    Node* bgNode = new Node(glm::vec3(0.0, 0.0, -10.0), glm::vec3(90.0f, 0.0f, 0.0f), glm::vec3(50.0f, 1.0f, 10.0f));
+//    bgNode->addComponent(new MeshRenderer(floorMesh, *bg));
+//    addToScene(bgNode);
 
     Mesh* cubeMesh = new Mesh;
     cubeMesh->initCube();
-    Material* building = new Material( new Texture("textures/building1.jpg") , glm::vec3(1.0, 1.0, 1.0));
+    Material* building = new Material( new Texture("textures/igloo.jpg") , glm::vec3(1.0, 1.0, 1.0));
 
-    Node* cubeNode1 = new Node(glm::vec3(3.0, 0.0, -5.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f));
+    Node* cubeNode1 = new Node(glm::vec3(3.0, 0.0, -6.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f));
     cubeNode1->addComponent(new MeshRenderer(*cubeMesh, *building));
     addToScene(cubeNode1);
 
-    Node* cubeNode2 = new Node(glm::vec3(20.0, 0.0, -5.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f));
+    Node* cubeNode2 = new Node(glm::vec3(13.0, 0.0, -6.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f));
     cubeNode2->addComponent(new MeshRenderer(*cubeMesh, *building));
     addToScene(cubeNode2);
+
+    Node* cubeNode3 = new Node(glm::vec3(23.0, 0.0, -5.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f));
+    cubeNode3->addComponent(new MeshRenderer(*cubeMesh, *building));
+    addToScene(cubeNode3);
 
     Mesh* triMesh = new Mesh;
     triMesh->initTriangle();

@@ -1,4 +1,5 @@
 #include "boundingsphere.h"
+#include <iostream>
 
 Intersect BoundingSphere::getIntersection(const BoundingSphere& other)
 {
@@ -13,6 +14,9 @@ Intersect BoundingSphere::getIntersection(const BoundingSphere& other)
     {
         return Intersect(false, centerDistance - radiusDistance);
     }
+}
 
-
+void BoundingSphere::transform(const glm::vec3& translate)
+{
+    m_center += translate;
 }

@@ -19,6 +19,7 @@ Shader::Shader(const std::string& file_name) {
 
     glBindAttribLocation(m_program, 0, "a_posCoord");
     glBindAttribLocation(m_program, 1, "a_texCoord");
+    glBindAttribLocation(m_program, 2, "a_norCoord");
 
     glLinkProgram(m_program);
     checkError(m_program, GL_LINK_STATUS, true, "Program Linking failed");
@@ -57,6 +58,13 @@ void Shader::setUniformVector3f(const std::string& uniformName, const glm::vec3&
 void Shader::setUniformMatrix4f(const std::string& uniformName, const glm::mat4& value) const
 {
 	glUniformMatrix4fv(m_uniformMap.at(uniformName), 1, GL_FALSE, &value[0][0]);
+}
+
+void Shader::setUniformDirectionalLight(const std::string& uniformName, const DirectionalLight& value) const
+{
+    setUniformVector3f(uniformName + ".baseLight.color", value.getBaseLight().getColor());
+    setUniformf(uniformName + ".baseLight.intensity", value.getBaseLight().getIntensity());
+    setUniformVector3f(uniformName + ".direction", value.getDirection());
 }
 
 void Shader::addVertexShader(const std::string& text)

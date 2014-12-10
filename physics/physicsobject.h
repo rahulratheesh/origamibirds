@@ -2,26 +2,31 @@
 #define PHYSICSOBJECT_H
 
 #include <glm/glm.hpp>
-#include "boundingsphere.h"
+#include "collider.h"
 
 class PhysicsObject
 {
     public:
-        PhysicsObject(glm::vec3 position, glm::vec3 velocity) :
-            m_position(position),
+        PhysicsObject(Collider* collider, glm::vec3 velocity, bool isBoid) :
+            m_position(collider->getCenter()),
+            m_oldPosition(collider->getCenter()),
             m_velocity(velocity),
-            m_radius(1.0f),
-            m_boundingSphere(m_position, m_radius) {}
+            m_collider(collider),
+            m_isBoid(isBoid)
+        {}
 
         void move(float delta);
 
         inline glm::vec3 getPosition() const { return m_position; }
         inline glm::vec3 getVelocity() const { return m_velocity; }
+        inline bool getIsBoid() const { return m_isBoid; }
         inline void setVelocity(glm::vec3 velocity) { m_velocity = velocity; }
 
-        Collider& getBoundingSphere() {
-            m_boundingSphere = BoundingSphere(m_position, m_radius);
-            return m_boundingSphere;
+        Collider& getCollider() {
+            glm::vec3 translate = m_position - m_oldPosition;
+            m_oldPosition = m_position;
+            m_collider->transform(translate);
+            return *m_collider;
         }
 
         virtual ~PhysicsObject() {}
@@ -30,10 +35,10 @@ class PhysicsObject
 
     private:
         glm::vec3 m_position;
+        glm::vec3 m_oldPosition;
         glm::vec3 m_velocity;
-        float m_radius;
-
-        mutable BoundingSphere m_boundingSphere;
+        Collider* m_collider;
+        bool m_isBoid;
 
 };
 

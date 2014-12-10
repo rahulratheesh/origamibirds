@@ -27,7 +27,7 @@ class RenderingEngine
     private:
         Window* m_window;
         Camera* m_mainCamera;
-        Shader* m_basicShader;
+        Shader* m_shader;
 };
 
 #endif // RENDERINGENGINE_H

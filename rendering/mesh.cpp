@@ -41,8 +41,38 @@ IndexedMesh::IndexedMesh(const std::string& fileName)
         }
     }
 
+    calcNormals();
+
     m_numVertices = m_posCoords.size();
     m_numIndices = m_indices.size();
+}
+
+void IndexedMesh::calcNormals()
+{
+    m_norCoords.clear();
+    m_norCoords.reserve(m_posCoords.size());
+
+    for (unsigned int i = 0; i < m_posCoords.size(); i++)
+        m_norCoords.push_back(glm::vec3(0.0f, 0.0f, 0.0f));
+
+    for (unsigned int i = 0; i < m_indices.size(); i += 3)
+    {
+        int i0 = m_indices[i];
+        int i1 = m_indices[i+1];
+        int i2 = m_indices[i+2];
+
+        glm::vec3 v1 = m_posCoords[i1] - m_posCoords[i0];
+        glm::vec3 v2 = m_posCoords[i2] - m_posCoords[i0];
+
+        glm::vec3 normal = glm::normalize(glm::cross(v1, v2));
+
+        m_norCoords[i0] = m_norCoords[i0] + normal;
+        m_norCoords[i1] = m_norCoords[i1] + normal;
+        m_norCoords[i2] = m_norCoords[i2] + normal;
+    }
+
+    for (unsigned int i = 0; i < m_norCoords.size(); i++)
+        m_norCoords[i] = glm::normalize(m_norCoords[i]);
 }
 
 void Mesh::init(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices)
@@ -51,19 +81,19 @@ void Mesh::init(Vertex* vertices, unsigned int numVertices, unsigned int* indice
     for (unsigned int i = 0; i < numVertices; i++)
     {
         indexedMesh.m_posCoords.push_back( vertices[i].getPosCoord() );
-
         indexedMesh.m_texCoords.push_back( vertices[i].getTexCoord() );
     }
     for (unsigned int i = 0; i < numIndices; i++)
     {
         indexedMesh.m_indices.push_back( indices[i] );
     }
+    indexedMesh.calcNormals();
     indexedMesh.m_numVertices = numVertices;
     indexedMesh.m_numIndices = numIndices;
-
-
     init(indexedMesh);
 }
+
+
 
 void Mesh::initTriangle()
 {
@@ -157,10 +187,13 @@ void Mesh::init(const IndexedMesh& indexedMesh)
     glGenBuffers(NUM_BUFFERS, m_vertex_buffer_objects);
     // position buffer
     glBindBuffer(GL_ARRAY_BUFFER, m_vertex_buffer_objects[POSCOORD_VB]);
-    glBufferData(GL_ARRAY_BUFFER, indexedMesh.m_numVertices  * sizeof(indexedMesh.m_posCoords[0]), &indexedMesh.m_posCoords[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, indexedMesh.m_numVertices * sizeof(indexedMesh.m_posCoords[0]), &indexedMesh.m_posCoords[0], GL_STATIC_DRAW);
     // texture buffer
     glBindBuffer(GL_ARRAY_BUFFER, m_vertex_buffer_objects[TEXCOORD_VB]);
-    glBufferData(GL_ARRAY_BUFFER, indexedMesh.m_numVertices  * sizeof(indexedMesh.m_texCoords[0]), &indexedMesh.m_texCoords[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, indexedMesh.m_numVertices * sizeof(indexedMesh.m_texCoords[0]), &indexedMesh.m_texCoords[0], GL_STATIC_DRAW);
+    // normal buffer
+    glBindBuffer(GL_ARRAY_BUFFER, m_vertex_buffer_objects[NORCOORD_VB]);
+    glBufferData(GL_ARRAY_BUFFER, indexedMesh.m_numVertices * sizeof(indexedMesh.m_norCoords[0]), &indexedMesh.m_norCoords[0], GL_STATIC_DRAW);
     // generate ibo
     glGenBuffers(1, &m_index_buffer_object);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_index_buffer_object);
@@ -173,18 +206,23 @@ void Mesh::draw()
 
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
+    glEnableVertexAttribArray(2);
 
     glBindBuffer(GL_ARRAY_BUFFER, m_vertex_buffer_objects[POSCOORD_VB]);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
     glBindBuffer(GL_ARRAY_BUFFER, m_vertex_buffer_objects[TEXCOORD_VB]);
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    glBindBuffer(GL_ARRAY_BUFFER, m_vertex_buffer_objects[NORCOORD_VB]);
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_index_buffer_object);
+
     // tell OpenGL how to render the buffer
     glDrawElements(GL_TRIANGLES, m_size, GL_UNSIGNED_INT, 0);
 
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
+    glDisableVertexAttribArray(2);
 }
 
 Mesh::~Mesh()
