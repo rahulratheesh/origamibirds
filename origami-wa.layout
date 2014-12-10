@@ -43,13 +43,13 @@
 	<File name="physics/boundingbox.h" open="0" top="0" tabpos="7">
 		<Cursor position="264" topLine="0" />
 	</File>
-	<File name="physics/boundingsphere.cpp" open="1" top="0" tabpos="5">
+	<File name="physics/boundingsphere.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="290" topLine="0" />
 	</File>
 	<File name="physics/boundingsphere.h" open="0" top="0" tabpos="4">
 		<Cursor position="332" topLine="9" />
 	</File>
-	<File name="physics/collider.cpp" open="1" top="0" tabpos="8">
+	<File name="physics/collider.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="175" topLine="3" />
 	</File>
 	<File name="physics/collider.h" open="0" top="0" tabpos="3">
@@ -58,22 +58,22 @@
 	<File name="physics/intersect.h" open="0" top="0" tabpos="8">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="physics/physicsengine.cpp" open="1" top="0" tabpos="9">
-		<Cursor position="861" topLine="105" />
+	<File name="physics/physicsengine.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="814" topLine="14" />
 	</File>
-	<File name="physics/physicsengine.h" open="1" top="0" tabpos="4">
+	<File name="physics/physicsengine.h" open="0" top="0" tabpos="4">
 		<Cursor position="357" topLine="1" />
 	</File>
-	<File name="physics/physicsobject.cpp" open="0" top="0" tabpos="4">
+	<File name="physics/physicsobject.cpp" open="1" top="0" tabpos="4">
 		<Cursor position="127" topLine="0" />
 	</File>
-	<File name="physics/physicsobject.h" open="1" top="0" tabpos="3">
-		<Cursor position="1103" topLine="1" />
+	<File name="physics/physicsobject.h" open="1" top="0" tabpos="5">
+		<Cursor position="932" topLine="18" />
 	</File>
-	<File name="physics/plane.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="454" topLine="0" />
+	<File name="physics/plane.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="171" topLine="0" />
 	</File>
-	<File name="physics/plane.h" open="1" top="0" tabpos="6">
+	<File name="physics/plane.h" open="0" top="0" tabpos="6">
 		<Cursor position="247" topLine="1" />
 	</File>
 	<File name="rendering/camera.cpp" open="0" top="0" tabpos="3">
@@ -127,14 +127,14 @@
 	<File name="scene01.h" open="0" top="0" tabpos="0">
 		<Cursor position="165" topLine="0" />
 	</File>
-	<File name="scene02.cpp" open="1" top="1" tabpos="2">
-		<Cursor position="1279" topLine="9" />
+	<File name="scene02.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="5513" topLine="78" />
 	</File>
 	<File name="scene02.h" open="0" top="0" tabpos="0">
 		<Cursor position="165" topLine="0" />
 	</File>
-	<File name="scenegraph/cameracomponent.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="737" topLine="19" />
+	<File name="scenegraph/cameracomponent.cpp" open="0" top="0" tabpos="10">
+		<Cursor position="108" topLine="0" />
 	</File>
 	<File name="scenegraph/cameracomponent.h" open="0" top="0" tabpos="7">
 		<Cursor position="376" topLine="0" />
@@ -152,16 +152,16 @@
 		<Cursor position="156" topLine="15" />
 	</File>
 	<File name="scenegraph/physicsenginecomponent.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="250" topLine="0" />
+		<Cursor position="120" topLine="0" />
 	</File>
 	<File name="scenegraph/physicsenginecomponent.h" open="0" top="0" tabpos="5">
 		<Cursor position="340" topLine="2" />
 	</File>
-	<File name="scenegraph/physicsobjectcomponent.cpp" open="0" top="0" tabpos="9">
-		<Cursor position="151" topLine="0" />
+	<File name="scenegraph/physicsobjectcomponent.cpp" open="1" top="1" tabpos="6">
+		<Cursor position="341" topLine="0" />
 	</File>
-	<File name="scenegraph/physicsobjectcomponent.h" open="0" top="0" tabpos="0">
-		<Cursor position="111" topLine="0" />
+	<File name="scenegraph/physicsobjectcomponent.h" open="1" top="0" tabpos="7">
+		<Cursor position="348" topLine="0" />
 	</File>
 	<File name="shaders/basic.fs.glsl" open="0" top="0" tabpos="16">
 		<Cursor position="75" topLine="0" />

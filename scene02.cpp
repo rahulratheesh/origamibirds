@@ -65,37 +65,37 @@ void Scene02::init(const Window& window)
     Mesh* triMesh = new Mesh;
     triMesh->initTriangle();
 
-    IndexedMesh paperPlaneIndexedMesh("models/paperplane.obj");
+    IndexedMesh paperPlaneIndexedMesh("models/paperbird.obj");
     Mesh paperPlaneMesh;
     paperPlaneMesh.init(paperPlaneIndexedMesh);
 
     Material* yellowPaper = new Material( new Texture("textures/paper.jpg") , glm::vec3(0.95, 0.95, 0.25));
-    Node* birdNode1 = new Node(glm::vec3(-1.0, 0.5, -5.0), glm::vec3(0.0f, 90.0f, 0.0f), glm::vec3(0.5f, 0.5f, 0.5f));
+    Node* birdNode1 = new Node(glm::vec3(-1.0, 0.5, -5.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.5f, 0.5f, 0.5f));
     birdNode1->addComponent(new MeshRenderer(paperPlaneMesh, *yellowPaper));
     birdNode1->addComponent(new PhysicsObjectComponent(&physicsEngineComponent->getPhysicsEngine().getObject(0)));
     birdNode1->addComponent(cameraComponent);
     addToScene(birdNode1);
 
     Material* orangePaper = new Material( new Texture("textures/paper.jpg") , glm::vec3(0.93, 0.67, 0.09));
-    Node* birdNode2 = new Node(glm::vec3(-2.0, 0.5, -5.0), glm::vec3(0.0f, 90.0f, 0.0f), glm::vec3(0.5f, 0.5f, 0.5f));
+    Node* birdNode2 = new Node(glm::vec3(-2.0, 0.5, -5.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.5f, 0.5f, 0.5f));
     birdNode2->addComponent(new MeshRenderer(paperPlaneMesh, *orangePaper));
     birdNode2->addComponent(new PhysicsObjectComponent(&physicsEngineComponent->getPhysicsEngine().getObject(1)));
     addToScene(birdNode2);
 
     Material* redPaper = new Material( new Texture("textures/paper.jpg") , glm::vec3(0.9, 0.28, 0.28));
-    Node* birdNode3 = new Node(glm::vec3(-3.0, 0.5, -5.0), glm::vec3(0.0f, 90.0f, 0.0f), glm::vec3(0.5f, 0.5f, 0.5f));
+    Node* birdNode3 = new Node(glm::vec3(-3.0, 0.5, -5.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.5f, 0.5f, 0.5f));
     birdNode3->addComponent(new MeshRenderer(paperPlaneMesh, *redPaper));
     birdNode3->addComponent(new PhysicsObjectComponent(&physicsEngineComponent->getPhysicsEngine().getObject(2)));
     addToScene(birdNode3);
 
     Material* greenPaper = new Material( new Texture("textures/paper.jpg") , glm::vec3(0.43, 0.79, 0.43));
-    Node* birdNode4 = new Node(glm::vec3(-4.0, 0.5, -5.0), glm::vec3(0.0f, 90.0f, 0.0f), glm::vec3(0.5f, 0.5f, 0.5f));
+    Node* birdNode4 = new Node(glm::vec3(-4.0, 0.5, -5.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.5f, 0.5f, 0.5f));
     birdNode4->addComponent(new MeshRenderer(paperPlaneMesh, *greenPaper));
     birdNode4->addComponent(new PhysicsObjectComponent(&physicsEngineComponent->getPhysicsEngine().getObject(3)));
     addToScene(birdNode4);
 
     Material* bluePaper = new Material( new Texture("textures/paper.jpg") , glm::vec3(0.27, 0.51, 0.78));
-    Node* birdNode5 = new Node(glm::vec3(-5.0, 0.5, -5.0), glm::vec3(0.0f, 90.0f, 0.0f), glm::vec3(0.5f, 0.5f, 0.5f));
+    Node* birdNode5 = new Node(glm::vec3(-5.0, 0.5, -5.0), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.5f, 0.5f, 0.5f));
     birdNode5->addComponent(new MeshRenderer(paperPlaneMesh, *bluePaper));
     birdNode5->addComponent(new PhysicsObjectComponent(&physicsEngineComponent->getPhysicsEngine().getObject(4)));
     addToScene(birdNode5);

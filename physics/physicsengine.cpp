@@ -25,6 +25,14 @@ void PhysicsEngine::input(const Input& input)
     // update velocity
     for (unsigned int i = 0; i < m_objects.size(); i++)
     {
+        if (force.x < 0.0)
+        {
+            m_objects[i].setIsGoingBack(true);
+        }
+        else
+        {
+            m_objects[i].setIsGoingBack(false);
+        }
         m_objects[i].setVelocity( 0.3f * (m_objects[i].getVelocity() + force) );
     }
 

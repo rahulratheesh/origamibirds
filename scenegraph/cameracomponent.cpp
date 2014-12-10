@@ -34,6 +34,7 @@ void CameraComponent::update(float delta)
     glm::vec3 currCameraPos = m_camera.getPosiiton();
     glm::vec3 pos = getTransform()->getTranslate();
     currCameraPos.x = pos.x;
+    currCameraPos.y = pos.y;
     m_camera.setPositon(currCameraPos);
 }
 
