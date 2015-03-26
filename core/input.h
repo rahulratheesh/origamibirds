@@ -19,6 +19,7 @@ class Input
         inline glm::vec2 getMouseCoord() const { return m_mouseCoord; }
         inline glm::vec3 getObjCoord() const { return m_objCoord; }
         inline bool getClick() const { return m_click; }
+        inline bool getMusic() const { return m_music; }
 
         inline void setKey(int keyCode, bool value)  { m_keys[keyCode] = value; }
         inline void setDownKey(int keyCode, bool value) { m_downKeys[keyCode] = value; }
@@ -26,6 +27,7 @@ class Input
         inline void setMouseCoord(int x, int y) { m_mouseCoord = glm::vec2(x, y); m_click = true; }
         inline void setObjCoord(const glm::vec3& objCoord) { m_objCoord = objCoord; m_click = true; }
         inline void setClick(bool click) { m_click = click; }
+        inline void setMusic(bool music) { m_music = music; }
 
         virtual ~Input();
 
@@ -41,6 +43,7 @@ class Input
         glm::vec2 m_mouseCoord;
         glm::vec3 m_objCoord;
         bool m_click;
+        bool m_music;
 };
 
 #endif // INPUT_H

@@ -56,7 +56,6 @@ void Window::update()
 
 void Window::input()
 {
-
 }
 
 void renderWrapper()
@@ -106,8 +105,12 @@ void Window::windowClick(int button, int state, int x, int y)
 
         inputWrapper->setMouseCoord(x, y);
         inputWrapper->setObjCoord(objCoord);
+        inputWrapper->setClick(true);
 
+    }
 
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
+        inputWrapper->setClick(false);
     }
 }
 

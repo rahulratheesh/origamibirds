@@ -36,6 +36,7 @@
 			<Add library="glut" />
 			<Add library="GLEW" />
 			<Add library="SOIL" />
+			<Add library="alut" />
 		</Linker>
 		<Unit filename="core/coreengine.cpp" />
 		<Unit filename="core/coreengine.h" />
@@ -49,6 +50,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="models/cube.obj" />
 		<Unit filename="models/cylinder.obj" />
+		<Unit filename="models/paperbird.obj" />
 		<Unit filename="models/plane.obj" />
 		<Unit filename="models/sphere.obj" />
 		<Unit filename="physics/boundingbox.cpp" />
@@ -84,6 +86,8 @@
 		<Unit filename="scene01.h" />
 		<Unit filename="scene02.cpp" />
 		<Unit filename="scene02.h" />
+		<Unit filename="scene03.cpp" />
+		<Unit filename="scene03.h" />
 		<Unit filename="scenegraph/cameracomponent.cpp" />
 		<Unit filename="scenegraph/cameracomponent.h" />
 		<Unit filename="scenegraph/component.h" />

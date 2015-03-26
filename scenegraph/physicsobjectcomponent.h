@@ -4,6 +4,8 @@
 #include "component.h"
 #include "../physics/physicsobject.h"
 
+class Input;
+
 class PhysicsObjectComponent : public Component
 {
     public:
@@ -12,6 +14,7 @@ class PhysicsObjectComponent : public Component
         {}
 
         void update(float delta);
+        void input(Input& input);
 
         virtual ~PhysicsObjectComponent() {}
 

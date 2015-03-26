@@ -9,11 +9,12 @@
 class PhysicsEngine
 {
     public:
-        PhysicsEngine() {}
+        PhysicsEngine() { m_music = false; }
 
         void addObject(const PhysicsObject& physicsObject);
         void simulate(float delta);
         void handleCollision();
+        void playMusic();
         void input(const Input& input);
 
         inline const PhysicsObject& getObject(unsigned int index) const { return m_objects[index]; }
@@ -28,6 +29,7 @@ class PhysicsEngine
         glm::vec3 cohesion(unsigned int i);
         glm::vec3 separation(unsigned int i);
         glm::vec3 alignment(unsigned int i);
+        bool m_music;
 };
 
 #endif // PHYSICSENGINE_H

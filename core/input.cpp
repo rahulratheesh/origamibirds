@@ -9,6 +9,7 @@ Input::Input()
         setUpKey(i, false);
     }
     m_click = false;
+    m_music = false;
 }
 
 Input::~Input()
